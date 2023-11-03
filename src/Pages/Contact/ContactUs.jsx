@@ -33,7 +33,7 @@ export const ContactUs = () => {
     
   return (
     <div>
-      <div className="">
+      <div className="" id="email">
         <div className="min-h-screen" data-aos="fade-up">
           <div>
             <div className="py-6">

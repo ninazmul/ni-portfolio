@@ -32,7 +32,7 @@ const Footer = () => {
                 <AiFillGithub className="text-[28px]"></AiFillGithub>
               </a>
               <a
-                href="/email"
+                href="#email"
                 className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
               >
                 <TfiEmail className="text-[28px]"></TfiEmail>
