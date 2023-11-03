@@ -1,6 +1,6 @@
 import { BsFacebook } from "react-icons/bs";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import { IoLogoWhatsapp } from "react-icons/io";
+import { TfiEmail } from "react-icons/tfi";
 import "../../../src/index.css";
 
 const Footer = () => {
@@ -32,13 +32,13 @@ const Footer = () => {
                 <AiFillGithub className="text-[28px]"></AiFillGithub>
               </a>
               <a
-                href="https://web.whatsapp.com/"
+                href="/email"
                 className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
               >
-                <IoLogoWhatsapp className="text-[28px]"></IoLogoWhatsapp>
+                <TfiEmail className="text-[28px]"></TfiEmail>
               </a>
               <a
-                href=""
+                href="https://www.linkedin.com/in/ninazmul/"
                 className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
               >
                 <AiFillLinkedin className="text-[28px] rounded-full"></AiFillLinkedin>

@@ -17,3 +17,18 @@
 .img_glow{
     box-shadow: 0 0 55px rgb(206, 71, 193);
 }
+
+.neno-button{
+    transition: all 0.3x ease-in-out;
+}
+.neno-button:hover{
+    box-shadow: 0 0 15px rgb(206, 71, 193);
+}
+
+.card_glow{
+    box-shadow: 0 0 25px rgb(206, 71, 193);
+}
+
+.input_glow{
+    box-shadow: 0 0 15px rgb(206, 71, 193);
+}

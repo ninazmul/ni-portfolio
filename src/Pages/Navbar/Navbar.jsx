@@ -1,24 +1,27 @@
 import { Link, } from "react-router-dom";
 import logo from "../../../public/N.I. Logo.png";
+import { IoLogoWhatsapp } from "react-icons/io";
+import ReactWhatsapp from "react-whatsapp";
+
 const Navbar = () => {
 
 
   const navBtn = (
     <>
       <ul className="lg:flex gap-4 text-xl font-bold">
-        <Link spy={true} smooth={true} to="/" className="hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover:border-fuchsia-600 cursor-pointer">
+        <Link spy="true" smooth="true" to="/" className="hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover:border-fuchsia-600 cursor-pointer">
           <li>Home </li>
         </Link>
 
-        <Link spy={true} smooth={true} to="/about" className="hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover:border-fuchsia-600 cursor-pointer">
+        <Link spy="true" smooth="true" to="/about" className="hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover:border-fuchsia-600 cursor-pointer">
           <li>About </li>
         </Link>
 
-        <Link spy={true} smooth={true} to="/portfolio" className="hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover:border-fuchsia-600 cursor-pointer">
+        <Link spy="true" smooth="true" to="/portfolio" className="hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover:border-fuchsia-600 cursor-pointer">
           <li>Portfolio </li>
         </Link>
 
-        <Link spy={true} smooth={true} to="/clients" className="hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover:border-fuchsia-600 cursor-pointer">
+        <Link spy="true" smooth="true" to="/clients" className="hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover:border-fuchsia-600 cursor-pointer">
           <li>Clients </li>
         </Link>
       </ul>
@@ -58,19 +61,21 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex transition">
-          <ul className="menu menu-horizontal px-1">
-            {navBtn}
-          </ul>
+          <ul className="menu menu-horizontal px-1">{navBtn}</ul>
         </div>
         <div className="navbar-end">
           <button>
             <div className="chat chat-start">
-              <div className="chat-bubble bg-gradient-to-r from-pink-500 to-purple-700 text-white text-xl font-bold w-40">
-                Contact me
-              </div>
+              <ReactWhatsapp
+                className="chat-bubble bg-gradient-to-r from-pink-500 to-purple-700 text-white text-xl font-bold w-48 flex items-center justify-between neno-button shadow-xl hover:shadow-fuchsia-800/50"
+                number="+8801580845746"
+                message="As-salamu alaykum. I'm interested in learning more about your services."
+              >
+                Contact Me
+                <IoLogoWhatsapp />
+              </ReactWhatsapp>
             </div>
-                  </button>
-                 
+          </button>
         </div>
       </div>
     </div>
