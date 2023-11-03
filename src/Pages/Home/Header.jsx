@@ -15,7 +15,8 @@ const Header = () => {
       delay: 0,
       duration: 750,
     });
-  },[])
+  }, [])
+  
     return (
       <div>
         <div className="hero min-h-screen">
