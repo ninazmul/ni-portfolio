@@ -3,8 +3,9 @@ import Root from "../Layout/Root";
 import Home from "../Pages/Home/Home";
 import About from "../Pages/About/About";
 import Portfolio from "../Pages/Portfolio/Portfolio";
-import Clients from "../Pages/Clients/Clients";
 import ErrorPage from "../ErrorPage/ErrorPage";
+import SignIn from "../Pages/SignInUp/SignIn";
+import SignUp from "../Pages/SignInUp/SignUp";
 
 
 const routes = createBrowserRouter([
@@ -26,9 +27,14 @@ const routes = createBrowserRouter([
                 element: <Portfolio></Portfolio>
             },
             {
-                path: '/clients',
-                element: <Clients></Clients>
+                path: '/signIn',
+                element: <SignIn></SignIn>
+            },
+            {
+                path: '/signUp',
+                element: <SignUp></SignUp>
             }
+            
         ]
     }
 ]);

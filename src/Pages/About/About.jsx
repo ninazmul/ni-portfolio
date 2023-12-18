@@ -5,6 +5,8 @@ import "../../../src/index.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { FaDownload } from "react-icons/fa";
+
 
 const About = () => {
     useEffect(() => {
@@ -21,7 +23,7 @@ const About = () => {
         <div className="hero-content flex-col-reverse lg:flex-row-reverse">
           <div data-aos="fade-up" className="flex-1">
             <img
-              src="/public/1694098009329.jpg"
+              src="https://i.ibb.co/JpKCHwp/1694098009329.jpg"
               className="border-2 p-1 border-fuchsia-500 img_glow "
             />
           </div>
@@ -31,7 +33,7 @@ const About = () => {
             </p>
             <h1
               data-aos="fade-right"
-              className="text-5xl font-bold leading-normal text-center uppercase"
+              className="text-3xl md:text-5xl font-bold leading-normal text-center uppercase"
             >
               I'm <span className="text-fuchsia-500">Nazmul Islam</span>
             </h1>
@@ -99,7 +101,7 @@ const About = () => {
       <div className="py-6">
         <h1
           data-aos="fade-left"
-          className="text-5xl font-bold leading-normal text-center uppercase text-fuchsia-500"
+          className="text-3xl md:text-5xl font-bold leading-normal text-center uppercase text-fuchsia-500"
         >
           Summary
         </h1>
@@ -114,19 +116,26 @@ const About = () => {
           outcomes every time.
         </p>
       </div>
-      <div>
-        <h1
-          data-aos="fade-right"
-          className="text-5xl font-bold leading-normal text-center uppercase text-fuchsia-500"
+      
+      <div className="flex flex-col items-center justify-center py-4">
+        <a
+          href="https://drive.google.com/file/d/19uV3Bw3Red_WC96L8Q7IAopGJ-CtxeiR/view?usp=sharing"
+          className="btn btn-outline font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg uppercase relative overflow-hidden text-center my-1 text-xl w-72"
         >
-          Let's Work Together
-        </h1>
-        <p>
-          I am passionate about using my skills and creativity to help
-          businesses and individuals achieve their communication and marketing
-          goals. If you are looking for a creative professional who can deliver
-          high-quality and engaging content, I invite you to contact me today.
-        </p>
+          Download RESUME{" "}
+          <span>
+            <FaDownload />
+          </span>
+        </a>
+        <a
+          href="https://drive.google.com/file/d/1zbkc1hdZ1Ip6VQfFNFgrQD6lDsoxu5SY/view?usp=sharing"
+          className="btn btn-outline font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg uppercase relative overflow-hidden text-center my-1 text-xl w-72"
+        >
+          Download CV{" "}
+          <span>
+            <FaDownload />
+          </span>
+        </a>
       </div>
     </div>
   );

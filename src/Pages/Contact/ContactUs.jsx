@@ -37,7 +37,7 @@ export const ContactUs = () => {
         <div className="min-h-screen" data-aos="fade-up">
           <div>
             <div className="py-6">
-              <h1 className="text-5xl font-bold leading-normal text-center uppercase">
+              <h1 className="text-3xl md:text-5xl font-bold leading-normal text-center uppercase">
                 Contact me via <span className="text-fuchsia-500">E-mail</span>
               </h1>
             </div>
