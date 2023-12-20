@@ -6,6 +6,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { FaDownload } from "react-icons/fa";
+import Slider from "../Home/Slider";
 
 
 const About = () => {
@@ -98,27 +99,36 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="py-6">
-        <h1
-          data-aos="fade-left"
-          className="text-3xl md:text-5xl font-bold leading-normal text-center uppercase text-fuchsia-500"
-        >
-          Summary
-        </h1>
-        <p data-aos="fade-left" className="text-justify text-xl">
-          I possess a wide array of creative skills, including proficiency in
-          website development, voiceover and dubbing, graphic design, as well as
-          photo and video editing. These talents allow me to approach projects
-          with a unique and effective perspective, consistently delivering
-          exceptional results. Whether it's crafting stunning visuals, adding
-          life to voiceovers, or enhancing photos and videos, my skills and
-          experience are finely honed for the job, ensuring high-quality
-          outcomes every time.
-        </p>
+      <div className="flex flex-col lg:flex-row gap-4 py-6">
+        <div className="lg:w-1/2">
+          <Slider></Slider>
+        </div>
+        <div className="lg:w-1/2">
+          <h1
+            data-aos="fade-left"
+            className="text-3xl md:text-5xl font-bold leading-normal text-center uppercase text-fuchsia-500"
+          >
+            Summary
+          </h1>
+          <p data-aos="fade-left" className="text-justify text-xl">
+            I possess a wide array of creative skills, including proficiency in
+            website development, voiceover and dubbing, graphic design, as well
+            as photo and video editing. These talents allow me to approach
+            projects with a unique and effective perspective, consistently
+            delivering exceptional results. Whether it's crafting stunning
+            visuals, adding life to voiceovers, or enhancing photos and videos,
+            my skills and experience are finely honed for the job, ensuring
+            high-quality outcomes every time.
+          </p>
+        </div>
       </div>
-      
-      <div className="flex flex-col items-center justify-center py-4">
+
+      <div
+        data-aos="fade-up"
+        className="flex flex-col items-center justify-center py-4"
+      >
         <a
+          data-aos="fade-right"
           href="https://drive.google.com/file/d/19uV3Bw3Red_WC96L8Q7IAopGJ-CtxeiR/view?usp=sharing"
           className="btn btn-outline font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg uppercase relative overflow-hidden text-center my-1 text-xl w-72"
         >
@@ -128,6 +138,7 @@ const About = () => {
           </span>
         </a>
         <a
+          data-aos="fade-left"
           href="https://drive.google.com/file/d/1zbkc1hdZ1Ip6VQfFNFgrQD6lDsoxu5SY/view?usp=sharing"
           className="btn btn-outline font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg uppercase relative overflow-hidden text-center my-1 text-xl w-72"
         >
