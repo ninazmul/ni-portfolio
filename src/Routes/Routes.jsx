@@ -6,6 +6,7 @@ import Portfolio from "../Pages/Portfolio/Portfolio";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import SignIn from "../Pages/SignInUp/SignIn";
 import SignUp from "../Pages/SignInUp/SignUp";
+import Email from "../Pages/Contact/Email";
 
 
 const routes = createBrowserRouter([
@@ -17,6 +18,10 @@ const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>
+            },
+            {
+                path: '/email',
+                element: <Email></Email>
             },
             {
                 path: '/about',

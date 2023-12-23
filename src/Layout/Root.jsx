@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../Pages/Navbar/Navbar";
 import Footer from "../Pages/Navbar/Footer";
 import { useEffect, useState } from "react";
@@ -7,6 +7,10 @@ import { Audio } from "react-loader-spinner";
 const Root = () => {
 
   const [loader, setLoader] = useState(false);
+  const location = useLocation();
+  const noNavFooter =
+    location.pathname.includes("signIn") ||
+    location.pathname.includes("signUp");
   useEffect(() => {
     setLoader(true);
     setTimeout(() => {
@@ -28,12 +32,12 @@ const Root = () => {
             />
           </div>
         ) : (
-          <div className="max-w-7xl mx-auto overflow-hidden">
-            <Navbar></Navbar>
+          <div className="">
+            {noNavFooter || <Navbar></Navbar>}
             <div className="min-h-[400px]">
               <Outlet></Outlet>
             </div>
-            <Footer></Footer>
+            {noNavFooter || <Footer></Footer>}
           </div>
         )}
       </>

@@ -12,7 +12,7 @@ export const ContactUs = () => {
     .sendForm(
       "service_r949igq",
       "template_uzee5it",
-      form.current, // Pass the HTML form element using ref
+      form.current,
       "zI5ie0ibLaamw9QaF"
     )
     .then(
@@ -21,7 +21,7 @@ export const ContactUs = () => {
         Swal.fire({
           icon: "success",
           title: "Email sent successfully!",
-          text: "Your message has been sent.",
+          text: "Your message has been sent to N.I..",
         });
       },
       (error) => {

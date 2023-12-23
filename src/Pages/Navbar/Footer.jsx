@@ -2,6 +2,7 @@ import { BsFacebook } from "react-icons/bs";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import "../../../src/index.css";
 import { Link } from "react-router-dom";
+import { TfiEmail } from "react-icons/tfi";
 
 const Footer = () => {
   return (
@@ -33,6 +34,12 @@ const Footer = () => {
               className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
             >
               <AiFillGithub className="text-[28px]"></AiFillGithub>
+            </a>
+            <a
+              href="/email"
+              className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
+            >
+              <TfiEmail className="text-[28px]"></TfiEmail>
             </a>
             <a
               href="https://www.linkedin.com/in/ninazmul/"

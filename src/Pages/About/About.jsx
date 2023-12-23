@@ -1,6 +1,6 @@
 import { BsFacebook } from "react-icons/bs";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-// import { TfiEmail } from "react-icons/tfi";
+import { TfiEmail } from "react-icons/tfi";
 import "../../../src/index.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -83,12 +83,12 @@ const About = () => {
               >
                 <AiFillGithub className="text-[28px]"></AiFillGithub>
               </a>
-              {/* <a
-                href="/"
+              <a
+                href="/email"
                 className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
               >
                 <TfiEmail className="text-[28px]"></TfiEmail>
-              </a> */}
+              </a>
               <a
                 href="https://www.linkedin.com/in/ninazmul/"
                 className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
