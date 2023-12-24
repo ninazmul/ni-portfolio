@@ -1,9 +1,34 @@
-import { Link, } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { IoLogoWhatsapp } from "react-icons/io";
 import ReactWhatsapp from "react-whatsapp";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
+  const { user, signOUT } = useContext(AuthContext);
+  const [isSignedIn, setIsSignedIn] = useState(!!user);
 
+  const handleSignOut = () => {
+    signOUT()
+      .then(() => {
+        Swal.fire({
+          icon: "success",
+          title: "Sign-out successful!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        setIsSignedIn(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+        });
+      });
+  };
 
   const navBtn = (
     <>
@@ -34,7 +59,6 @@ const Navbar = () => {
         >
           <li>Portfolio </li>
         </Link>
-
       </ul>
     </>
   );
@@ -86,10 +110,15 @@ const Navbar = () => {
               className="btn btn-ghost btn-circle avatar"
             >
               <div className="w-10 rounded-full">
-                <img
-                  alt="Tailwind CSS Navbar component"
-                  src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                />
+                {user && user.photoURL ? (
+                  <>
+                    <img alt="" src={user.photoURL} />
+                  </>
+                ) : (
+                  <>
+                    <img alt="" src="https://ibb.co/WkL3RbF" />
+                  </>
+                )}
               </div>
             </div>
             <ul
@@ -97,21 +126,37 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow glass rounded-box w-52 gap-4"
             >
               <li>
-                <p className="justify-between hover:text-fuchsia-600 transition text-2xl cursor-pointer">
-                  Name
-                </p>
-                <p className="justify-between hover:text-fuchsia-600 transition cursor-pointer">
-                  example@gmail.com
-                </p>
+                {user?.displayName && (
+                  <p className="justify-between hover:text-fuchsia-600 transition text-2xl cursor-pointer">
+                    {user.displayName}
+                  </p>
+                )}
+                {user?.email && (
+                  <p className="justify-between hover:text-fuchsia-600 transition cursor-pointer">
+                    {user.email}
+                  </p>
+                )}
               </li>
-              <Link to="/signIn" className="">
-                <button
-                  data-aos="fade-right"
-                  className="neno-button w-full font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg p-2 uppercase relative overflow-hidden text-center"
-                >
-                  SignIn
-                </button>
-              </Link>
+              {isSignedIn ? (
+                <Link className="">
+                  <button
+                    onClick={handleSignOut}
+                    data-aos="fade-right"
+                    className="neno-button w-full font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg p-2 uppercase relative overflow-hidden text-center"
+                  >
+                    SignOut
+                  </button>
+                </Link>
+              ) : (
+                <Link to="/signIn" className="">
+                  <button
+                    data-aos="fade-right"
+                    className="neno-button w-full font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg p-2 uppercase relative overflow-hidden text-center"
+                  >
+                    SignIn
+                  </button>
+                </Link>
+              )}
             </ul>
           </div>
           <button className="flex items-center">

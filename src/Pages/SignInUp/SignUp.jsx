@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
 import { FcGoogle } from "react-icons/fc";
 import Swal from "sweetalert2";
 
 const SignUp = () => {
-  const { createUser, signInWithGoogle } = useContext(AuthContext);
+  const { createUser, signInWithGoogle, updateUserProfile } =
+    useContext(AuthContext);
   const [formData, setFormData] = useState({
     name: "",
     photoUrl: "",
@@ -14,6 +15,10 @@ const SignUp = () => {
   });
 
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,9 +32,14 @@ const SignUp = () => {
     e.preventDefault();
     try {
       await createUser(formData.email, formData.password);
-      // You can do additional tasks after successful signup if needed
-      console.log("User created successfully!");
-      showSuccessAlert();
+      updateUserProfile(formData.photoUrl, formData.name);
+      console.log("User created successfully!")
+        .then(() => {
+          console.log('user profile info updated!');
+          showSuccessAlert();
+          navigate(from, { replace: true });
+        })
+        .catch(error => console.log(error));
     } catch (error) {
       console.error("Error creating user:", error.message);
       setError(error.message);
@@ -43,6 +53,7 @@ const SignUp = () => {
       // You can do additional tasks after successful Google sign-in if needed
       console.log("User signed in with Google successfully!");
       showSuccessAlert();
+      navigate(from, { replace: true });
     } catch (error) {
       console.error("Error signing in with Google:", error.message);
       setError(error.message);

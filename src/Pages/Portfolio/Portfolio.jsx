@@ -2,7 +2,7 @@
 const Portfolio = () => {
     return (
         <div>
-            <h1>portfolio</h1>
+            <h1>portfolio will be updated</h1>
         </div>
     );
 };

@@ -1,5 +1,5 @@
-import { useContext, useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   loadCaptchaEnginge,
   LoadCanvasTemplate,
@@ -10,9 +10,12 @@ import Swal from "sweetalert2";
 import { FcGoogle } from "react-icons/fc";
 
 const SignIn = () => {
-  const captchaRef = useRef(null);
   const [disabled, setDisabled] = useState(true);
   const { signInWithGoogle, signIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   const handleSignIn = async (e) => {
     e.preventDefault();
@@ -25,6 +28,7 @@ const SignIn = () => {
       const user = result.user;
       console.log(user);
       showSuccessAlert("Success!", "User signed in successfully!");
+      navigate(from, { replace: true });
     } catch (error) {
       console.error("Error signing in:", error.message);
       showErrorAlert("Error", error.message);
@@ -36,6 +40,7 @@ const SignIn = () => {
       await signInWithGoogle();
       console.log("User signed in with Google successfully!");
       showSuccessAlert("Success!", "User signed in successfully!");
+      navigate(from, { replace: true });
     } catch (error) {
       console.error("Error signing in with Google:", error.message);
       showErrorAlert("Error", error.message);
@@ -58,8 +63,8 @@ const SignIn = () => {
     });
   };
 
-  const handleValidateCaptcha = () => {
-    const userCaptchaValue = captchaRef.current.value;
+  const handleValidateCaptcha = (e) => {
+    const userCaptchaValue = e.target.value;
     setDisabled(!validateCaptcha(userCaptchaValue));
   };
 
@@ -118,7 +123,6 @@ const SignIn = () => {
               </div>
               <input
                 onBlur={handleValidateCaptcha}
-                ref={captchaRef}
                 type="text"
                 placeholder="Type Captcha"
                 name="captcha"

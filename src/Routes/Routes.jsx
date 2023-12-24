@@ -7,41 +7,45 @@ import ErrorPage from "../ErrorPage/ErrorPage";
 import SignIn from "../Pages/SignInUp/SignIn";
 import SignUp from "../Pages/SignInUp/SignUp";
 import Email from "../Pages/Contact/Email";
+import PrivateRoutes from "./PrivateRoutes";
 
 
 const routes = createBrowserRouter([
-    {
-        path: '/',
-        element: <Root></Root>,
-        errorElement: <ErrorPage></ErrorPage>,
-        children: [
-            {
-                path: '/',
-                element: <Home></Home>
-            },
-            {
-                path: '/email',
-                element: <Email></Email>
-            },
-            {
-                path: '/about',
-                element: <About></About>
-            },
-            {
-                path: '/portfolio',
-                element: <Portfolio></Portfolio>
-            },
-            {
-                path: '/signIn',
-                element: <SignIn></SignIn>
-            },
-            {
-                path: '/signUp',
-                element: <SignUp></SignUp>
-            }
-            
-        ]
-    }
+  {
+    path: "/",
+    element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/email",
+        element: <Email></Email>,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
+      },
+      {
+        path: "/portfolio",
+        element: (
+          <PrivateRoutes>
+            <Portfolio></Portfolio>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/signIn",
+        element: <SignIn></SignIn>,
+      },
+      {
+        path: "/signUp",
+        element: <SignUp></SignUp>,
+      },
+    ],
+  },
 ]);
 
 export default routes;
