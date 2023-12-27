@@ -83,12 +83,12 @@ const About = () => {
               >
                 <AiFillGithub className="text-[28px]"></AiFillGithub>
               </a>
-              <a
+              {/* <a
                 href="/email"
                 className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
               >
                 <TfiEmail className="text-[28px]"></TfiEmail>
-              </a>
+              </a> */}
               <a
                 href="https://www.linkedin.com/in/ninazmul/"
                 className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
