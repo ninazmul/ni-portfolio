@@ -99,12 +99,12 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex transition">
           <ul className="menu menu-horizontal px-1">{navBtn}</ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end gap-2">
           <div className="dropdown dropdown-end">
             <div
               tabIndex={0}
               role="button"
-              className="btn btn-ghost btn-circle avatar"
+              className="btn btn-ghost w-10 btn-circle avatar"
             >
               <div>
                 {user && user.photoURL ? (
@@ -125,17 +125,21 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow glass rounded-box w-52 gap-4"
             >
               <li>
-                {user?.displayName && (
-                  <p className="justify-between hover:text-fuchsia-600 transition text-2xl cursor-pointer">
-                    {user.displayName}
-                  </p>
-                )}
+                <Link to="/dashboard">
+                  {user?.displayName && (
+                    <p className="justify-between hover:text-fuchsia-600 transition text-2xl cursor-pointer">
+                      {user.displayName}
+                    </p>
+                  )}
+                </Link>
+
                 {user?.email && (
                   <p className="justify-between hover:text-fuchsia-600 transition cursor-pointer">
                     {user.email}
                   </p>
                 )}
               </li>
+
               {isSignedIn ? (
                 <Link className="">
                   <button

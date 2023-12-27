@@ -8,6 +8,8 @@ import SignIn from "../Pages/SignInUp/SignIn";
 import SignUp from "../Pages/SignInUp/SignUp";
 import Email from "../Pages/Contact/Email";
 import PrivateRoutes from "./PrivateRoutes";
+import PasswordReset from "../Pages/SignInUp/PasswordReset";
+import Dashboard from "../Layout/Dashboard";
 
 
 const routes = createBrowserRouter([
@@ -44,6 +46,14 @@ const routes = createBrowserRouter([
         path: "/signUp",
         element: <SignUp></SignUp>,
       },
+      {
+        path: "/passwordReset",
+        element: <PasswordReset></PasswordReset>
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard></Dashboard>
+      }
     ],
   },
 ]);

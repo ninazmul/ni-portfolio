@@ -17,23 +17,39 @@ const SignIn = () => {
 
   const from = location.state?.from?.pathname || "/";
 
-  const handleSignIn = async (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const email = form.email.value;
-    const password = form.password.value;
+const handleSignIn = async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const email = form.email.value;
+  const password = form.password.value;
 
-    try {
-      const result = await signIn(email, password);
-      const user = result.user;
-      console.log(user);
+  try {
+    const result = await signIn(email, password);
+    // Ensure that the 'user' property is available in the result object
+    const user = result?.user;
+
+    if (user) {
+      console.log("User signed in successfully:", user);
       showSuccessAlert("Success!", "User signed in successfully!");
       navigate(from, { replace: true });
-    } catch (error) {
-      console.error("Error signing in:", error.message);
+    } else {
+      // Handle the case where the 'user' property is not available
+      console.error("Error signing in: User not found");
+      showErrorAlert("Error", "User not found");
+    }
+  } catch (error) {
+    console.error("Error signing in:", error);
+
+    // Check the error code for a specific case
+    if (error.code === "auth/user-not-found") {
+      console.error("User not found. Please check your credentials.");
+      showErrorAlert("Error", "User not found. Please check your credentials.");
+    } else {
       showErrorAlert("Error", error.message);
     }
-  };
+  }
+};
+
 
   const handleGoogleSignIn = async () => {
     try {
@@ -108,9 +124,12 @@ const SignIn = () => {
             ))}
             <div className="form-control">
               <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
+                <Link
+                  to="/passwordReset"
+                  className="label-text-alt link link-hover"
+                >
                   Forgot password?
-                </a>
+                </Link>
               </label>
             </div>
             <div className="form-control">

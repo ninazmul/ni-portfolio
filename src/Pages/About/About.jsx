@@ -1,6 +1,6 @@
 import { BsFacebook } from "react-icons/bs";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import { TfiEmail } from "react-icons/tfi";
+// import { TfiEmail } from "react-icons/tfi";
 import "../../../src/index.css";
 import Aos from "aos";
 import "aos/dist/aos.css";

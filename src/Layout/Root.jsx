@@ -10,7 +10,8 @@ const Root = () => {
   const location = useLocation();
   const noNavFooter =
     location.pathname.includes("signIn") ||
-    location.pathname.includes("signUp");
+    location.pathname.includes("signUp") ||
+    location.pathname.includes("dashboard");
   useEffect(() => {
     setLoader(true);
     setTimeout(() => {

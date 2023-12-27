@@ -2,7 +2,7 @@ import { BsFacebook } from "react-icons/bs";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import "../../../src/index.css";
 import { Link } from "react-router-dom";
-import { TfiEmail } from "react-icons/tfi";
+// import { TfiEmail } from "react-icons/tfi";
 
 const Footer = () => {
   return (
