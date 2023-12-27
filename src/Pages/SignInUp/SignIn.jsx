@@ -88,29 +88,25 @@ const SignIn = () => {
         </div>
         <div className="card w-4/5 md:w-96 flex-shrink-0 shadow-2xl border-2 p-1 border-fuchsia-500 card_glow text-white">
           <form onSubmit={handleSignIn} className="card-body">
+            {["email", "password"].map((field) => (
+              <div key={field} className="form-control">
+                <label className="label">
+                  <span className="">{`Your ${
+                    field.charAt(0).toUpperCase() + field.slice(1)
+                  }`}</span>
+                </label>
+                <input
+                  type={field === "password" ? "password" : "text"}
+                  placeholder={`Your ${
+                    field.charAt(0).toUpperCase() + field.slice(1)
+                  }`}
+                  name={field}
+                  className="input input-bordered glass border-fuchsia-800 border-2 input_glow"
+                  required
+                />
+              </div>
+            ))}
             <div className="form-control">
-              <label className="label">
-                <span className="">Your Email</span>
-              </label>
-              <input
-                type="email"
-                placeholder="Your Email"
-                name="email"
-                className="input input-bordered glass border-fuchsia-800 border-2 input_glow"
-                required
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="">Your Password</span>
-              </label>
-              <input
-                type="password"
-                placeholder="Your Password"
-                name="password"
-                className="input input-bordered glass border-fuchsia-800 border-2 input_glow"
-                required
-              />
               <label className="label">
                 <a href="#" className="label-text-alt link link-hover">
                   Forgot password?

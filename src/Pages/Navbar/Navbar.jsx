@@ -1,66 +1,63 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { IoLogoWhatsapp } from "react-icons/io";
 import ReactWhatsapp from "react-whatsapp";
-import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import Swal from "sweetalert2";
+import { FaUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, signOUT } = useContext(AuthContext);
-  const [isSignedIn, setIsSignedIn] = useState(!!user);
+  const isSignedIn = !!user;
 
-  const handleSignOut = () => {
-    signOUT()
-      .then(() => {
-        Swal.fire({
-          icon: "success",
-          title: "Sign-out successful!",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        setIsSignedIn(false);
-      })
-      .catch((error) => {
-        console.log(error);
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Something went wrong!",
-        });
+  const handleSignOut = async () => {
+    try {
+      await signOUT();
+      Swal.fire({
+        icon: "success",
+        title: "Sign-out successful!",
+        showConfirmButton: false,
+        timer: 1500,
       });
+    } catch (error) {
+      console.log(error);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+      });
+    }
   };
 
   const navBtn = (
-    <>
-      <ul className="lg:flex gap-4 text-xl font-bold">
-        <Link
-          spy="true"
-          smooth="true"
-          to="/"
-          className="hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover:border-fuchsia-600 cursor-pointer"
-        >
-          <li>Home </li>
-        </Link>
+    <ul className="lg:flex gap-4 text-xl font-bold">
+      <Link
+        spy="true"
+        smooth="true"
+        to="/"
+        className="hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover:border-fuchsia-600 cursor-pointer"
+      >
+        <li>Home </li>
+      </Link>
 
-        <Link
-          spy="true"
-          smooth="true"
-          to="/about"
-          className="hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover:border-fuchsia-600 cursor-pointer"
-        >
-          <li>About </li>
-        </Link>
+      <Link
+        spy="true"
+        smooth="true"
+        to="/about"
+        className="hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover:border-fuchsia-600 cursor-pointer"
+      >
+        <li>About </li>
+      </Link>
 
-        <Link
-          spy="true"
-          smooth="true"
-          to="/portfolio"
-          className="hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover:border-fuchsia-600 cursor-pointer"
-        >
-          <li>Portfolio </li>
-        </Link>
-      </ul>
-    </>
+      <Link
+        spy="true"
+        smooth="true"
+        to="/portfolio"
+        className="hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover:border-fuchsia-600 cursor-pointer"
+      >
+        <li>Portfolio </li>
+      </Link>
+    </ul>
   );
 
   return (
@@ -109,15 +106,17 @@ const Navbar = () => {
               role="button"
               className="btn btn-ghost btn-circle avatar"
             >
-              <div className="w-10 rounded-full">
+              <div>
                 {user && user.photoURL ? (
-                  <>
-                    <img alt="" src={user.photoURL} />
-                  </>
+                  <img
+                    className="w-10 rounded-full"
+                    alt=""
+                    src={user.photoURL}
+                  />
                 ) : (
-                  <>
-                    <img alt="" src="https://ibb.co/WkL3RbF" />
-                  </>
+                  <div className="text-4xl text-fuchsia-500">
+                    <FaUserCircle />
+                  </div>
                 )}
               </div>
             </div>

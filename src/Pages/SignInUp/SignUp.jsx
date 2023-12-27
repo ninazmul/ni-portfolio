@@ -32,14 +32,9 @@ const SignUp = () => {
     e.preventDefault();
     try {
       await createUser(formData.email, formData.password);
-      updateUserProfile(formData.photoUrl, formData.name);
-      console.log("User created successfully!")
-        .then(() => {
-          console.log('user profile info updated!');
-          showSuccessAlert();
-          navigate(from, { replace: true });
-        })
-        .catch(error => console.log(error));
+      await updateUserProfile(formData.name, formData.photoUrl);
+      showSuccessAlert();
+      navigate(from, { replace: true });
     } catch (error) {
       console.error("Error creating user:", error.message);
       setError(error.message);
@@ -50,8 +45,6 @@ const SignUp = () => {
   const handleGoogleSignIn = async () => {
     try {
       await signInWithGoogle();
-      // You can do additional tasks after successful Google sign-in if needed
-      console.log("User signed in with Google successfully!");
       showSuccessAlert();
       navigate(from, { replace: true });
     } catch (error) {
@@ -94,63 +87,26 @@ const SignUp = () => {
         </div>
         <div className="card w-4/5 md:w-96 flex-shrink-0 shadow-2xl border-2 p-1 border-fuchsia-500 card_glow text-white">
           <form className="card-body" onSubmit={handleSubmit}>
-            <div className="form-control">
-              <label className="label">
-                <span className="">Your Name</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Your Name"
-                name="name"
-                className="input input-bordered glass border-fuchsia-800 border-2 input_glow"
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="">Your PhotoUrl</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Your PhotoUrl"
-                name="photoUrl"
-                className="input input-bordered glass border-fuchsia-800 border-2 input_glow"
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="">Your Email</span>
-              </label>
-              <input
-                type="email"
-                placeholder="Your Email"
-                name="email"
-                className="input input-bordered glass border-fuchsia-800 border-2 input_glow"
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="">Your Password</span>
-              </label>
-              <input
-                type="password"
-                placeholder="Your Password"
-                name="password"
-                className="input input-bordered glass border-fuchsia-800 border-2 input_glow"
-                onChange={handleChange}
-                required
-              />
-            </div>
-            {error && (
-              <div className="text-red-500 mt-2">
-                <p>{error}</p>
+            {["name", "photoUrl", "email", "password"].map((field) => (
+              <div key={field} className="form-control">
+                <label className="label">
+                  <span className="">{`Your ${
+                    field.charAt(0).toUpperCase() + field.slice(1)
+                  }`}</span>
+                </label>
+                <input
+                  type={field === "password" ? "password" : "text"}
+                  placeholder={`Your ${
+                    field.charAt(0).toUpperCase() + field.slice(1)
+                  }`}
+                  name={field}
+                  className="input input-bordered glass border-fuchsia-800 border-2 input_glow"
+                  onChange={handleChange}
+                  required
+                />
               </div>
-            )}
+            ))}
+            {error && <div className="text-red-500 mt-2">{error}</div>}
             <div className="form-control mt-6">
               <input
                 className="neno-button font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg py-4 px-8 uppercase relative overflow-hidden text-center"
@@ -165,8 +121,7 @@ const SignUp = () => {
                 onClick={handleGoogleSignIn}
                 className="neno-button-google font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg py-4 px-8 uppercase relative overflow-hidden text-center flex items-center justify-center gap-1 text-bold"
               >
-                <FcGoogle />
-                 Google
+                <FcGoogle /> Google
               </button>
             </div>
             <p className="text-center">
