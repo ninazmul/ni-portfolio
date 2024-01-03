@@ -35,7 +35,7 @@ const Root = () => {
         ) : (
           <div className="">
             {noNavFooter || <Navbar></Navbar>}
-            <div className="min-h-[400px]">
+            <div className="min-h-[400px] pt-14 px-4">
               <Outlet></Outlet>
             </div>
             {noNavFooter || <Footer></Footer>}

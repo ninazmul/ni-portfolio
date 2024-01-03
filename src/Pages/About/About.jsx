@@ -38,7 +38,7 @@ const About = () => {
             >
               I'm <span className="text-fuchsia-500">Nazmul Islam</span>
             </h1>
-            <p data-aos="fade-left" className="py-6 text-justify">
+            <p data-aos="fade-left" className="py-6 md:text-xl px-2 md:px-4 text-justify">
               But you can call me{" "}
               <span className="text-fuchsia-500">N.I. Nazmul</span>. I'm not
               your run-of-the-mill professional; I'm a creative chameleon with a
@@ -100,7 +100,7 @@ const About = () => {
         </div>
       </div>
       <div className="flex flex-col lg:flex-row gap-4 py-6">
-        <div className="lg:w-1/2">
+        <div className="lg:w-1/2 p-4">
           <Slider></Slider>
         </div>
         <div className="lg:w-1/2">
@@ -110,7 +110,7 @@ const About = () => {
           >
             Summary
           </h1>
-          <p data-aos="fade-left" className="text-justify text-xl">
+          <p data-aos="fade-left" className="text-justify md:text-xl px-2 md:px-4">
             I possess a wide array of creative skills, including proficiency in
             website development, voiceover and dubbing, graphic design, as well
             as photo and video editing. These talents allow me to approach

@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 import { IoLogoWhatsapp } from "react-icons/io";
 import ReactWhatsapp from "react-whatsapp";
 import { AuthContext } from "../../providers/AuthProviders";
 import Swal from "sweetalert2";
 import { FaUserCircle } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const { user, signOUT } = useContext(AuthContext);
@@ -31,38 +31,38 @@ const Navbar = () => {
 
   const navBtn = (
     <ul className="lg:flex gap-4 text-xl font-bold">
-      <Link
+      <NavLink
         spy="true"
         smooth="true"
         to="/"
         className="hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover:border-fuchsia-600 cursor-pointer"
       >
         <li>Home </li>
-      </Link>
+      </NavLink>
 
-      <Link
+      <NavLink
         spy="true"
         smooth="true"
         to="/about"
         className="hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover:border-fuchsia-600 cursor-pointer"
       >
         <li>About </li>
-      </Link>
+      </NavLink>
 
-      <Link
+      <NavLink
         spy="true"
         smooth="true"
         to="/portfolio"
         className="hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover:border-fuchsia-600 cursor-pointer"
       >
         <li>Portfolio </li>
-      </Link>
+      </NavLink>
     </ul>
   );
 
   return (
     <div>
-      <div className="navbar">
+      <div className="navbar fixed z-30 glass">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -88,13 +88,13 @@ const Navbar = () => {
               {navBtn}
             </ul>
           </div>
-          <Link to="/">
+          <NavLink to="/">
             <img
               className="normal-case w-32 text-xl"
-              src="https://i.ibb.co/wYHp4ZV/N-I-Logo.png"
+              src="https://i.ibb.co/rtY75WQ/N-I-Logo-croped.png"
               alt=""
             />
-          </Link>
+          </NavLink>
         </div>
         <div className="navbar-center hidden lg:flex transition">
           <ul className="menu menu-horizontal px-1">{navBtn}</ul>
@@ -125,13 +125,13 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow glass rounded-box w-52 gap-4"
             >
               <li>
-                <Link to="/dashboard">
+                <NavLink to="/dashboard">
                   {user?.displayName && (
                     <p className="justify-between hover:text-fuchsia-600 transition text-2xl cursor-pointer">
                       {user.displayName}
                     </p>
                   )}
-                </Link>
+                </NavLink>
 
                 {user?.email && (
                   <p className="justify-between hover:text-fuchsia-600 transition cursor-pointer">
@@ -141,7 +141,7 @@ const Navbar = () => {
               </li>
 
               {isSignedIn ? (
-                <Link className="">
+                <NavLink className="">
                   <button
                     onClick={handleSignOut}
                     data-aos="fade-right"
@@ -149,16 +149,16 @@ const Navbar = () => {
                   >
                     SignOut
                   </button>
-                </Link>
+                </NavLink>
               ) : (
-                <Link to="/signIn" className="">
+                <NavLink to="/signIn" className="">
                   <button
                     data-aos="fade-right"
                     className="neno-button w-full font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg p-2 uppercase relative overflow-hidden text-center"
                   >
                     SignIn
                   </button>
-                </Link>
+                </NavLink>
               )}
             </ul>
           </div>

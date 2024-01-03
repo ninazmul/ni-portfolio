@@ -10,6 +10,8 @@ import Email from "../Pages/Contact/Email";
 import PrivateRoutes from "./PrivateRoutes";
 import PasswordReset from "../Pages/SignInUp/PasswordReset";
 import Dashboard from "../Layout/Dashboard";
+import AddItems from "../Layout/AddItems";
+import AllUsers from "../Layout/AllUsers";
 
 
 const routes = createBrowserRouter([
@@ -48,12 +50,26 @@ const routes = createBrowserRouter([
       },
       {
         path: "/passwordReset",
-        element: <PasswordReset></PasswordReset>
+        element: <PasswordReset></PasswordReset>,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoutes>
+        <Dashboard></Dashboard>
+      </PrivateRoutes>
+    ),
+    children: [
+      {
+        path: "/dashboard/add",
+        element: <AddItems></AddItems>,
       },
       {
-        path: "/dashboard",
-        element: <Dashboard></Dashboard>
-      }
+        path: "/dashboard/users",
+        element: <AllUsers></AllUsers>
+      },
     ],
   },
 ]);

@@ -12,7 +12,7 @@ const Footer = () => {
           <Link>
             <img
               className="w-52"
-              src="https://i.ibb.co/wYHp4ZV/N-I-Logo.png"
+              src="https://i.ibb.co/rtY75WQ/N-I-Logo-croped.png"
               alt=""
             />
           </Link>
