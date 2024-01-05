@@ -2,121 +2,143 @@
   {
     "category": "video",
     "videoURL": "https://i.ibb.co/gPZqDkj/cinema-equipment-table.jpg",
-    "projectName": "Video Project 1",
-    "createdDate": "2023-01-01"
+    "projectName": "Video Project 1 - Voice",
+    "createdDate": "2023-01-01",
+    "niche": "Voice"
   },
   {
     "category": "image",
     "imgURL": "https://i.ibb.co/n35YhBx/camera-photographic-with-smartphone-devices-generative-ai.jpg",
-    "projectName": "Image Project 1",
-    "createdDate": "2023-01-02"
+    "projectName": "Image Project 1 - Graphics",
+    "createdDate": "2023-01-02",
+    "niche": "Graphics"
   },
   {
     "category": "audio",
     "audioURL": "https://i.ibb.co/j5JFNW9/vinyl-record-with-retro-texture-composition.jpg",
-    "projectName": "Audio Project 1",
-    "createdDate": "2023-01-03"
+    "projectName": "Audio Project 1 - Programming",
+    "createdDate": "2023-01-03",
+    "niche": "Programming"
   },
   {
     "category": "video",
     "videoURL": "https://i.ibb.co/gPZqDkj/cinema-equipment-table.jpg",
-    "projectName": "Video Project 2",
-    "createdDate": "2023-01-04"
+    "projectName": "Video Project 2 - Voice",
+    "createdDate": "2023-01-04",
+    "niche": "Voice"
   },
   {
     "category": "image",
     "imgURL": "https://i.ibb.co/n35YhBx/camera-photographic-with-smartphone-devices-generative-ai.jpg",
-    "projectName": "Image Project 2",
-    "createdDate": "2023-01-05"
+    "projectName": "Image Project 2 - Graphics",
+    "createdDate": "2023-01-05",
+    "niche": "Graphics"
   },
   {
     "category": "audio",
     "audioURL": "https://i.ibb.co/j5JFNW9/vinyl-record-with-retro-texture-composition.jpg",
-    "projectName": "Audio Project 2",
-    "createdDate": "2023-01-06"
+    "projectName": "Audio Project 2 - Programming",
+    "createdDate": "2023-01-06",
+    "niche": "Programming"
   },
   {
     "category": "video",
     "videoURL": "https://i.ibb.co/gPZqDkj/cinema-equipment-table.jpg",
-    "projectName": "Video Project 3",
-    "createdDate": "2023-01-07"
+    "projectName": "Video Project 3 - Voice",
+    "createdDate": "2023-01-07",
+    "niche": "Voice"
   },
   {
     "category": "image",
     "imgURL": "https://i.ibb.co/n35YhBx/camera-photographic-with-smartphone-devices-generative-ai.jpg",
-    "projectName": "Image Project 3",
-    "createdDate": "2023-01-08"
+    "projectName": "Image Project 3 - Graphics",
+    "createdDate": "2023-01-08",
+    "niche": "Graphics"
   },
   {
     "category": "audio",
     "audioURL": "https://i.ibb.co/j5JFNW9/vinyl-record-with-retro-texture-composition.jpg",
-    "projectName": "Audio Project 3",
-    "createdDate": "2023-01-09"
+    "projectName": "Audio Project 3 - Programming",
+    "createdDate": "2023-01-09",
+    "niche": "Programming"
   },
   {
     "category": "video",
     "videoURL": "https://i.ibb.co/gPZqDkj/cinema-equipment-table.jpg",
-    "projectName": "Video Project 4",
-    "createdDate": "2023-01-10"
+    "projectName": "Video Project 4 - Voice",
+    "createdDate": "2023-01-10",
+    "niche": "Voice"
   },
   {
     "category": "image",
     "imgURL": "https://i.ibb.co/n35YhBx/camera-photographic-with-smartphone-devices-generative-ai.jpg",
-    "projectName": "Image Project 4",
-    "createdDate": "2023-01-11"
+    "projectName": "Image Project 4 - Graphics",
+    "createdDate": "2023-01-11",
+    "niche": "Graphics"
   },
   {
     "category": "audio",
     "audioURL": "https://i.ibb.co/j5JFNW9/vinyl-record-with-retro-texture-composition.jpg",
-    "projectName": "Audio Project 4",
-    "createdDate": "2023-01-12"
+    "projectName": "Audio Project 4 - Programming",
+    "createdDate": "2023-01-12",
+    "niche": "Programming"
   },
   {
     "category": "video",
-    "videoURL": "https://i.ibb.co/gPZqDkj/cinema-equipment-table.jpg",
-    "projectName": "Video Project 5",
-    "createdDate": "2023-01-13"
+    "audioURL": "https://i.ibb.co/gPZqDkj/cinema-equipment-table.jpg",
+    "projectName": "Video Project 5 - Voice",
+    "createdDate": "2023-01-13",
+    "niche": "Voice"
   },
   {
     "category": "image",
     "imgURL": "https://i.ibb.co/n35YhBx/camera-photographic-with-smartphone-devices-generative-ai.jpg",
-    "projectName": "Image Project 5",
-    "createdDate": "2023-01-14"
+    "projectName": "Image Project 5 - Graphics",
+    "createdDate": "2023-01-14",
+    "niche": "Graphics"
   },
   {
     "category": "audio",
     "audioURL": "https://i.ibb.co/j5JFNW9/vinyl-record-with-retro-texture-composition.jpg",
-    "projectName": "Audio Project 5",
-    "createdDate": "2023-01-15"
+    "projectName": "Audio Project 5 - Programming",
+    "createdDate": "2023-01-15",
+    "niche": "Programming"
   },
   {
     "category": "video",
     "videoURL": "https://i.ibb.co/gPZqDkj/cinema-equipment-table.jpg",
-    "projectName": "Video Project 6",
-    "createdDate": "2023-01-16"
+    "projectName": "Video Project 6 - Voice",
+    "createdDate": "2023-01-16",
+    "niche": "Voice"
   },
   {
     "category": "image",
     "imgURL": "https://i.ibb.co/n35YhBx/camera-photographic-with-smartphone-devices-generative-ai.jpg",
-    "projectName": "Image Project 6",
-    "createdDate": "2023-01-17"
+    "projectName": "Image Project 6 - Graphics",
+    "createdDate": "2023-01-17",
+    "niche": "Graphics"
   },
   {
     "category": "audio",
     "audioURL": "https://i.ibb.co/j5JFNW9/vinyl-record-with-retro-texture-composition.jpg",
-    "projectName": "Audio Project 6",
-    "createdDate": "2023-01-18"
+    "projectName": "Audio Project 6 - Programming",
+    "createdDate": "2023-01-18",
+    "niche": "Programming"
   },
   {
     "category": "video",
     "videoURL": "https://i.ibb.co/gPZqDkj/cinema-equipment-table.jpg",
-    "projectName": "Video Project 7",
-    "createdDate": "2023-01-19"
+    "projectName": "Video Project 7 - Voice",
+    "createdDate": "2023-01-19",
+    "niche": "Voice"
   },
-  {
+ 
+
+ {
     "category": "image",
     "imgURL": "https://i.ibb.co/n35YhBx/camera-photographic-with-smartphone-devices-generative-ai.jpg",
-    "projectName": "Image Project 7",
-    "createdDate": "2023-01-20"
+    "projectName": "Image Project 7 - Graphics",
+    "createdDate": "2023-01-20",
+    "niche": "Graphics"
   }
 ]

@@ -10,6 +10,7 @@ const AddItems = () => {
     videoURL: "",
     imgURL: "",
     audioURL: "",
+    niche: "", // Add niche field to initial state
   };
 
   const [formData, setFormData] = useState(initialState);
@@ -29,7 +30,8 @@ const AddItems = () => {
       if (
         !formData.category ||
         !formData.projectName ||
-        !formData.createdDate
+        !formData.createdDate ||
+        !formData.niche // Validate niche field
       ) {
         setError("Please fill in all required fields.");
         return;
@@ -81,6 +83,31 @@ const AddItems = () => {
         </div>
         <div className="card w-4/5 md:w-96 flex-shrink-0 shadow-2xl border-2 p-1 border-fuchsia-500 card_glow text-white">
           <form className="card-body" onSubmit={handleSubmit}>
+            <div className="form-control">
+              <label className="label">
+                <span>Niche</span>
+              </label>
+              <select
+                name="niche"
+                className="input input-bordered glass border-fuchsia-800 border-2 input_glow"
+                onChange={handleChange}
+                value={formData.niche}
+                required
+              >
+                <option className="text-fuchsia-500" value="" disabled>
+                  Select niche
+                </option>
+                <option className="text-fuchsia-500" value="Voice">
+                  Voice
+                </option>
+                <option className="text-fuchsia-500" value="Graphics">
+                  Graphics
+                </option>
+                <option className="text-fuchsia-500" value="Programming">
+                  Programming
+                </option>
+              </select>
+            </div>
             {/* Category select input */}
             <div className="form-control">
               <label className="label">

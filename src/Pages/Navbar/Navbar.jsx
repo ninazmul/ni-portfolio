@@ -83,7 +83,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow glass rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-fuchsia-500 rounded-box w-52"
             >
               {navBtn}
             </ul>
@@ -122,7 +122,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow glass rounded-box w-52 gap-4"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-fuchsia-500 rounded-box w-52 gap-4"
             >
               <li>
                 <NavLink to="/dashboard">
@@ -145,7 +145,7 @@ const Navbar = () => {
                   <button
                     onClick={handleSignOut}
                     data-aos="fade-right"
-                    className="neno-button w-full font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg p-2 uppercase relative overflow-hidden text-center"
+                    className="neno-button w-full font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-white rounded-lg p-2 uppercase relative overflow-hidden text-center"
                   >
                     SignOut
                   </button>
@@ -154,7 +154,7 @@ const Navbar = () => {
                 <NavLink to="/signIn" className="">
                   <button
                     data-aos="fade-right"
-                    className="neno-button w-full font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg p-2 uppercase relative overflow-hidden text-center"
+                    className="neno-button w-full font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-white rounded-lg p-2 uppercase relative overflow-hidden text-center"
                   >
                     SignIn
                   </button>
