@@ -7,12 +7,12 @@ const useItem = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('data.json')
-            .then(res => res.json())
-            .then(data => {
-                setItem(data);
-                setLoading(false);
-        })
+        fetch("http://localhost:5000/items")
+          .then((res) => res.json())
+          .then((data) => {
+            setItem(data);
+            setLoading(false);
+          });
     },[])
     return [item, loading];
 };
