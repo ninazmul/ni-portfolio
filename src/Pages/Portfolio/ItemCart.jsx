@@ -3,7 +3,7 @@ const ItemCart = ({ item }) => {
 
   return (
     <div>
-      <div className="card w-96 glass">
+      <div className="card w-full glass">
         <figure>
           {imgURL && <img src={imgURL} alt="Project" />}
           {videoURL && <video src={videoURL} controls alt="Project Video" />}

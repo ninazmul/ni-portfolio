@@ -14,6 +14,8 @@ const Portfolio = () => {
   const voice = item.filter((item) => item.niche === "Voice");
   const graphics = item.filter((item) => item.niche === "Graphics");
 
+  const allItems = item; // All items
+
   const getPageItems = (items) => {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
@@ -28,11 +30,21 @@ const Portfolio = () => {
     <div className="pt-4">
       <Tabs>
         <TabList>
+          <Tab>All</Tab>
           <Tab>Programming</Tab>
           <Tab>Voice</Tab>
           <Tab>Graphics</Tab>
         </TabList>
 
+        <TabPanel>
+          <ItemTab items={getPageItems(allItems)}></ItemTab>
+          {/* Pagination controls */}
+          <Pagination
+            currentPage={currentPage}
+            totalPages={Math.ceil(allItems.length / itemsPerPage)}
+            onPageChange={handlePageChange}
+          />
+        </TabPanel>
         <TabPanel>
           <ItemTab items={getPageItems(programming)}></ItemTab>
           {/* Pagination controls */}
@@ -65,7 +77,6 @@ const Portfolio = () => {
   );
 };
 
-
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
@@ -87,6 +98,5 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
     </div>
   );
 };
-
 
 export default Portfolio;
