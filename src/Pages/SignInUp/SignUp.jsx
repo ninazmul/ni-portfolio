@@ -3,10 +3,12 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
 import { FcGoogle } from "react-icons/fc";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../Hooks/useAxiosPublic";
 
 const SignUp = () => {
   const { createUser, signInWithGoogle, updateUserProfile } =
     useContext(AuthContext);
+  const axiosPublic = useAxiosPublic();
   const [formData, setFormData] = useState({
     name: "",
     photoUrl: "",
@@ -28,28 +30,58 @@ const SignUp = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      await createUser(formData.email, formData.password);
-      await updateUserProfile(formData.name, formData.photoUrl);
-      showSuccessAlert();
-      navigate(from, { replace: true });
-    } catch (error) {
-      console.error("Error creating user:", error.message);
-      setError(error.message);
-      showErrorAlert("Error", error.message);
-    }
-  };
+   const handleSubmit = async (e) => {
+     e.preventDefault();
+     try {
+       // Create user
+       await createUser(formData.email, formData.password);
+
+       // Update user profile
+       await updateUserProfile(formData.name, formData.photoUrl);
+
+       // Save additional user information
+       const userInfo = {
+         displayName: formData.name,
+         email: formData.email,
+         photoUrl: formData.photoUrl,
+       };
+       axiosPublic.post("/users", userInfo).then((res) => {
+         if (res.data.insertedId) {
+           showSuccessAlert();
+           navigate(from, { replace: true });
+         }
+       });
+     } catch (error) {
+       console.error("Error creating user:", error.message);
+       setError(error.message);
+       showErrorAlert("Error", error.message);
+     }
+   };
 
   const handleGoogleSignIn = async () => {
     try {
-      await signInWithGoogle();
-      showSuccessAlert();
-      navigate(from, { replace: true });
+      await signInWithGoogle().then((result) => {
+        const userInfo = {
+          displayName: result.user?.displayName,
+          email: result.user?.email,
+          photoUrl: result.user?.photoUrl,
+        };
+
+        axiosPublic.post("/users", userInfo).then((res) => {
+          if (res.data.insertedId) {
+            showSuccessAlert("Success!", "User signed in successfully!");
+            navigate(from, { replace: true });
+          }
+        });
+        Swal.fire({
+          icon: "success",
+          title: "Successful!",
+          text: "Sign In successfully!",
+        });
+        navigate(from, { replace: true });
+      });
     } catch (error) {
-      console.error("Error signing in with Google:", error.message);
-      setError(error.message);
+      console.error("Google Sign-In Error", error);
       showErrorAlert("Error", error.message);
     }
   };

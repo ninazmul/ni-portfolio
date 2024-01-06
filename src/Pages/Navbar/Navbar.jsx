@@ -122,7 +122,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-fuchsia-500 rounded-box w-52 gap-4"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-fuchsia-500 rounded-box min-w-full w-auto  gap-4"
             >
               <li>
                 <NavLink to="/dashboard">

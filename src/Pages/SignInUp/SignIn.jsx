@@ -8,57 +8,74 @@ import {
 import { AuthContext } from "../../providers/AuthProviders";
 import Swal from "sweetalert2";
 import { FcGoogle } from "react-icons/fc";
+import useAxiosPublic from "../Hooks/useAxiosPublic";
 
 const SignIn = () => {
   const [disabled, setDisabled] = useState(true);
   const { signInWithGoogle, signIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
+  const axiosPublic = useAxiosPublic();
 
   const from = location.state?.from?.pathname || "/";
 
-const handleSignIn = async (e) => {
-  e.preventDefault();
-  const form = e.target;
-  const email = form.email.value;
-  const password = form.password.value;
+  const handleSignIn = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
 
-  try {
-    const result = await signIn(email, password);
-    // Ensure that the 'user' property is available in the result object
-    const user = result?.user;
-
-    if (user) {
-      console.log("User signed in successfully:", user);
-      showSuccessAlert("Success!", "User signed in successfully!");
+    try {
+      const result = await signIn(email, password);
+      const user = result.user;
+      console.log("Sign-in successful:", user);
+      Swal.fire({
+        icon: "success",
+        title: "Successful!",
+        text: "Sign In successfully!",
+      });
       navigate(from, { replace: true });
-    } else {
-      // Handle the case where the 'user' property is not available
-      console.error("Error signing in: User not found");
-      showErrorAlert("Error", "User not found");
+    } catch (error) {
+      console.error("Sign-in error:", error.code, error.message);
+      Swal.fire({
+        icon: "error",
+        title: "Oops..!",
+        text: "No user found, Sign In failed!",
+      });
     }
-  } catch (error) {
-    console.error("Error signing in:", error);
-
-    // Check the error code for a specific case
-    if (error.code === "auth/user-not-found") {
-      console.error("User not found. Please check your credentials.");
-      showErrorAlert("Error", "User not found. Please check your credentials.");
-    } else {
-      showErrorAlert("Error", error.message);
-    }
-  }
-};
-
+  };
 
   const handleGoogleSignIn = async () => {
     try {
-      await signInWithGoogle();
-      console.log("User signed in with Google successfully!");
-      showSuccessAlert("Success!", "User signed in successfully!");
-      navigate(from, { replace: true });
+      const result = await signInWithGoogle();
+      const user = result?.user;
+
+      if (user) {
+        const userInfo = {
+          displayName: user.displayName,
+          email: user.email,
+          photoUrl: user.photoURL,
+        };
+
+        axiosPublic.post("/users", userInfo).then((res) => {
+          if (res.data.insertedId) {
+            showSuccessAlert("Success!", "User signed in successfully!");
+            
+          }
+          navigate(from, { replace: true });
+        });
+
+        Swal.fire({
+          icon: "success",
+          title: "Successful!",
+          text: "Sign In successfully!",
+        });
+      } else {
+        console.error("Error signing in with Google: User not found");
+        showErrorAlert("Error", "User not found");
+      }
     } catch (error) {
-      console.error("Error signing in with Google:", error.message);
+      console.error("Google Sign-In Error", error);
       showErrorAlert("Error", error.message);
     }
   };

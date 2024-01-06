@@ -7,7 +7,7 @@ const ItemCart = ({ item }) => {
   return (
     <div>
       <div className="card w-full h-full glass">
-        <figure>
+        <figure className="h-3/5">
           {imgURL && <img src={imgURL} alt="Project" />}
           {videoURL && <video src={videoURL} controls alt="Project Video" />}
           {audioURL && <audio src={audioURL} controls alt="Project Audio" />}

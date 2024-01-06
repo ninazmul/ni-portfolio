@@ -10,7 +10,8 @@ const AddItems = () => {
     videoURL: "",
     imgURL: "",
     audioURL: "",
-    niche: "", // Add niche field to initial state
+    niche: "",
+    liveLink: "", // Add liveLink field to initial state
   };
 
   const [formData, setFormData] = useState(initialState);
@@ -31,7 +32,8 @@ const AddItems = () => {
         !formData.category ||
         !formData.projectName ||
         !formData.createdDate ||
-        !formData.niche // Validate niche field
+        !formData.niche ||
+        !formData.liveLink
       ) {
         setError("Please fill in all required fields.");
         return;
@@ -40,12 +42,14 @@ const AddItems = () => {
       setError("");
 
       const response = await axios.post(
-        "http://localhost:5000/addItem",
+        "http://localhost:5000/items",
         formData
       );
 
-      if (response.status === 201) {
-        // Product added successfully
+      console.log(response); // Log the response object to the console
+
+      if (response.data) {
+        // Adjust the success condition based on the actual structure of the response
         Swal.fire({
           icon: "success",
           title: "Product added successfully!",
@@ -53,10 +57,10 @@ const AddItems = () => {
           timer: 1500,
         });
 
-        // Optionally, you can reset the form or navigate to another page after successful submission
+        // Reset the form to its initial state
+        e.target.reset();
         setFormData(initialState);
       } else {
-        // Failed to add product
         Swal.fire({
           icon: "error",
           title: "Oops...",
@@ -65,8 +69,12 @@ const AddItems = () => {
       }
     } catch (error) {
       console.error("Error adding product:", error);
+      setError("An error occurred while adding the product. Please try again.");
     }
   };
+
+
+
 
   return (
     <div className="hero min-h-screen">
@@ -173,6 +181,20 @@ const AddItems = () => {
                 />
               </div>
             ))}
+            {/* LiveLink input */}
+            <div className="form-control">
+              <label className="label">
+                <span>Live Link</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Live Link"
+                name="liveLink"
+                className="input input-bordered glass border-fuchsia-800 border-2 input_glow"
+                onChange={handleChange}
+                value={formData.liveLink}
+              />
+            </div>
 
             {/* Dynamic input fields based on category */}
             {["projectName", "createdDate"].map((field) => (
@@ -181,9 +203,7 @@ const AddItems = () => {
                   <span>
                     {field === "createdDate"
                       ? "Created Date"
-                      : `Product ${
-                          field.charAt(0).toUpperCase() + field.slice(1)
-                        }`}
+                      : `${field.charAt(0).toUpperCase() + field.slice(1)}`}
                   </span>
                 </label>
                 {field === "createdDate" ? (

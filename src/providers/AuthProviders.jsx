@@ -45,17 +45,10 @@ const AuthProviders = ({ children }) => {
       });
   };
 
-  const signInWithGoogle = async () => {
+  const signInWithGoogle = () => {
     setLoading(true);
-    try {
-      const provider = new GoogleAuthProvider();
-      const userCredential = await signInWithPopup(auth, provider);
-      setUser(userCredential.user);
-      setLoading(false);
-    } catch (error) {
-      setLoading(false);
-      throw error;
-    }
+    const provider = new GoogleAuthProvider();
+    return signInWithPopup(auth, provider);
   };
 
   const signOUT = () => {

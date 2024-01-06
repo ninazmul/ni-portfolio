@@ -8,11 +8,13 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../providers/AuthProviders";
 import UserDetails from "../Pages/About/UserDetails";
 import { CiMenuBurger } from "react-icons/ci";
+import useAdmin from "../Pages/Hooks/useAdmin";
 
 // Navbar component
 const Navbar = () => {
   const { user, signOUT } = useContext(AuthContext);
   const isSignedIn = !!user;
+  const [isAdmin] = useAdmin();
 
   const handleSignOut = async () => {
     try {
@@ -36,49 +38,61 @@ const Navbar = () => {
    return (
      <div>
        <div className="dropdown dropdown-right md:hidden">
-         <div tabIndex={0} role="button" className="btn btn-outline text-fuchsia-500 text-xl m-1">
+         <div
+           tabIndex={0}
+           role="button"
+           className="btn btn-outline text-fuchsia-500 text-xl m-1"
+         >
            <CiMenuBurger />
          </div>
          <ul
            tabIndex={0}
            className="dropdown-content z-[1] menu p-2 shadow bg-fuchsia-500 rounded-box w-52"
          >
-           <li>
-             <NavLink
-               className="p-2 hover:text-fuchsia-800 hover:bg-white"
-               to="/"
-             >
-               <FaHome />
-               Home
-             </NavLink>
-           </li>
-           <li>
-             <NavLink
-               className="p-2 hover:text-fuchsia-800 hover:bg-white"
-               to="/dashboard/users"
-             >
-               <MdManageAccounts />
-               User's
-             </NavLink>
-           </li>
-           <li>
-             <NavLink
-               className="p-2 hover:text-fuchsia-800 hover:bg-white"
-               to="/"
-             >
-               <SiNginxproxymanager />
-               Item's
-             </NavLink>
-           </li>
-           <li>
-             <NavLink
-               className="p-2 hover:text-fuchsia-800 hover:bg-white"
-               to="/dashboard/add"
-             >
-               <IoMdAdd />
-               Add
-             </NavLink>
-           </li>
+           {isAdmin ? (
+             <>
+               <li>
+                 <NavLink
+                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   to="/dashboard/users"
+                 >
+                   <MdManageAccounts />
+                   User's Details
+                 </NavLink>
+               </li>
+               <li>
+                 <NavLink
+                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   to="/"
+                 >
+                   <SiNginxproxymanager />
+                   Item's Details
+                 </NavLink>
+               </li>
+               <li>
+                 <NavLink
+                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   to="/dashboard/add"
+                 >
+                   <IoMdAdd />
+                   Add Item's
+                 </NavLink>
+               </li>
+             </>
+           ) : (
+             <>
+               {" "}
+               <li>
+                 <NavLink
+                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   to="/"
+                 >
+                   <FaHome />
+                   Home
+                 </NavLink>
+               </li>
+             </>
+           )}
            <div>
              <p className="border-t border-gray-300 my-4"></p>
            </div>
@@ -103,44 +117,52 @@ const Navbar = () => {
            </li>
          </ul>
        </div>
-       <div className="hidden md:flex md:w-1/5 min-h-full bg-fuchsia-500 fixed z-50 overflow-y-auto">
+       <div className="hidden md:flex w-1/6 md:w-1/5 min-h-full bg-fuchsia-500 fixed z-50 overflow-y-auto">
          <ul className="menu text-xl font-bold">
-           <li>
-             <NavLink
-               className="p-2 hover:text-fuchsia-800 hover:bg-white"
-               to="/"
-             >
-               <FaHome />
-               Home
-             </NavLink>
-           </li>
-           <li>
-             <NavLink
-               className="p-2 hover:text-fuchsia-800 hover:bg-white"
-               to="/dashboard/users"
-             >
-               <MdManageAccounts />
-               User's
-             </NavLink>
-           </li>
-           <li>
-             <NavLink
-               className="p-2 hover:text-fuchsia-800 hover:bg-white"
-               to="/"
-             >
-               <SiNginxproxymanager />
-               Item's
-             </NavLink>
-           </li>
-           <li>
-             <NavLink
-               className="p-2 hover:text-fuchsia-800 hover:bg-white"
-               to="/dashboard/add"
-             >
-               <IoMdAdd />
-               Add
-             </NavLink>
-           </li>
+           {isAdmin ? (
+             <>
+               <li>
+                 <NavLink
+                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   to="/dashboard/users"
+                 >
+                   <MdManageAccounts />
+                   User's Details
+                 </NavLink>
+               </li>
+               <li>
+                 <NavLink
+                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   to="/"
+                 >
+                   <SiNginxproxymanager />
+                   Item's Details
+                 </NavLink>
+               </li>
+               <li>
+                 <NavLink
+                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   to="/dashboard/add"
+                 >
+                   <IoMdAdd />
+                   Add Item's
+                 </NavLink>
+               </li>
+             </>
+           ) : (
+             <>
+               {" "}
+               <li>
+                 <NavLink
+                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   to="/"
+                 >
+                   <FaHome />
+                   Home
+                 </NavLink>
+               </li>
+             </>
+           )}
            <div>
              <p className="border-t border-gray-300 my-4"></p>
            </div>
@@ -175,7 +197,7 @@ const ContentArea = () => {
   const shouldShowUserDetails = location.pathname === "/dashboard";
 
   return (
-    <div className="flex-1 overflow-y-auto ml-1/5 h-screen">
+    <div className="flex-1 overflow-y-auto h-screen">
       {/* Conditional rendering of UserDetails */}
       {shouldShowUserDetails && (
         <div className="flex justify-center p-4">
@@ -192,9 +214,9 @@ const ContentArea = () => {
 // Dashboard component
 const Dashboard = () => {
   return (
-    <div className="flex h-screen">
+    <div className="md:flex h-screen">
       {/* Render Navbar component */}
-      <div className="w-auto md:w-1/5">
+      <div className="md:w-1/5">
         <Navbar />
       </div>
       {/* Render ContentArea component */}
