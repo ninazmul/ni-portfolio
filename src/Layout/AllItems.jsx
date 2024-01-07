@@ -94,7 +94,10 @@ const AllItems = () => {
                   </td>
                   <td>{item.projectName}</td>
                   <td>
-                    <Link className="btn btn-outline btn-sm rounded-full">
+                    <Link
+                      to={`/dashboard/update/${item._id}`}
+                      className="btn btn-outline btn-sm rounded-full"
+                    >
                       Update
                     </Link>
                   </td>

@@ -1,8 +1,13 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import useAxiosSecure from "../Pages/Hooks/useAxiosSecure";
 
-const AddItems = () => {
+const UpdateItem = () => {
+    const items = useLoaderData();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
   const initialState = {
     category: "",
     projectName: "",
@@ -11,11 +16,17 @@ const AddItems = () => {
     imgURL: "",
     audioURL: "",
     niche: "",
-    liveLink: "", // Add liveLink field to initial state
+    liveLink: "",
   };
 
   const [formData, setFormData] = useState(initialState);
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    if (items) {
+      setFormData(items);
+    }
+  }, [items]);
 
   const handleChange = (e) => {
     setFormData((prevData) => ({
@@ -41,39 +52,35 @@ const AddItems = () => {
 
       setError("");
 
-      const response = await useAxiosSecure.post(
-        "http://localhost:5000/items",
+      const response = await axios.patch(
+        `http://localhost:5000/items/${items._id}`, 
         formData
       );
 
-      console.log(response); // Log the response object to the console
+      console.log(response);
 
       if (response.data) {
-        // Adjust the success condition based on the actual structure of the response
         Swal.fire({
           icon: "success",
-          title: "Product added successfully!",
+          title: "Product updated successfully!",
           showConfirmButton: false,
           timer: 1500,
         });
-
-        // Reset the form to its initial state
-        e.target.reset();
-        setFormData(initialState);
+          navigate(from, { replace: true });
       } else {
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "Failed to add product!",
+          text: "Failed to update product!",
         });
       }
     } catch (error) {
-      console.error("Error adding product:", error);
-      setError("An error occurred while adding the product. Please try again.");
+      console.error("Error updating product:", error);
+      setError(
+        "An error occurred while updating the product. Please try again."
+      );
     }
   };
-
-
 
 
   return (
@@ -81,11 +88,12 @@ const AddItems = () => {
       <div className="hero-content flex-col">
         <div className="text-center lg:text-left">
           <h1 className="text-2xl md:text-4xl font-bold text-center">
-            Add Product to <span className="text-fuchsia-500">N.I. Nazmul</span>
+            Update Product to{" "}
+            <span className="text-fuchsia-500">N.I. Nazmul</span>
             's Portfolio!
           </h1>
-          <p className="py-6">
-            Fill in the details below to add a new product to{" "}
+          <p className="py-6 text-center">
+            Fill in the details below to update a existing product to{" "}
             <span className="text-fuchsia-500">N.I. Nazmul</span>'s portfolio.
           </p>
         </div>
@@ -100,6 +108,7 @@ const AddItems = () => {
                 className="input input-bordered glass border-fuchsia-800 border-2 input_glow"
                 onChange={handleChange}
                 value={formData.niche}
+                defaultValue={items["niche"]}
                 required
               >
                 <option className="text-fuchsia-500" value="" disabled>
@@ -126,6 +135,7 @@ const AddItems = () => {
                 className="input input-bordered glass border-fuchsia-800 border-2 input_glow"
                 onChange={handleChange}
                 value={formData.category}
+                defaultValue={items["category"]}
                 required
               >
                 <option className="text-fuchsia-500" value="" disabled>
@@ -178,6 +188,7 @@ const AddItems = () => {
                   name={urlField}
                   className={`input input-bordered glass border-fuchsia-800 border-2 input_glow`}
                   onChange={handleChange}
+                  defaultValue={items[urlField]}
                 />
               </div>
             ))}
@@ -193,6 +204,7 @@ const AddItems = () => {
                 className="input input-bordered glass border-fuchsia-800 border-2 input_glow"
                 onChange={handleChange}
                 value={formData.liveLink}
+                defaultValue={items.liveLink}
               />
             </div>
 
@@ -212,6 +224,7 @@ const AddItems = () => {
                     name={field}
                     className="input input-bordered glass border-fuchsia-800 border-2 input_glow"
                     onChange={handleChange}
+                    defaultValue={items[field]}
                     required
                   />
                 ) : (
@@ -223,6 +236,7 @@ const AddItems = () => {
                     name={field}
                     className="input input-bordered glass border-fuchsia-800 border-2 input_glow"
                     onChange={handleChange}
+                    defaultValue={items[field]}
                     required
                   />
                 )}
@@ -235,7 +249,7 @@ const AddItems = () => {
                 className="neno-button font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg py-4 px-8 uppercase relative overflow-hidden text-center"
                 type="submit"
               >
-                Add Product
+                Update Product
               </button>
             </div>
           </form>
@@ -245,4 +259,4 @@ const AddItems = () => {
   );
 };
 
-export default AddItems;
+export default UpdateItem;

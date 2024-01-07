@@ -9,6 +9,7 @@ import { AuthContext } from "../providers/AuthProviders";
 import UserDetails from "../Pages/About/UserDetails";
 import { CiMenuBurger } from "react-icons/ci";
 import useAdmin from "../Pages/Hooks/useAdmin";
+import { CiEdit } from "react-icons/ci";
 
 // Navbar component
 const Navbar = () => {
@@ -87,6 +88,37 @@ const Navbar = () => {
                    Add Item's
                  </NavLink>
                </li>
+               <li>
+                 <NavLink
+                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   to="/dashboard/update"
+                 >
+                   <CiEdit />
+                   Update Item's
+                 </NavLink>
+               </li>
+               <div>
+                 <p className="border-t border-gray-300 my-4"></p>
+               </div>
+               <li>
+                 {isSignedIn ? (
+                   <Link
+                     onClick={handleSignOut}
+                     className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   >
+                     <FaSignOutAlt />
+                     SignOut
+                   </Link>
+                 ) : (
+                   <Link
+                     to="/signIn"
+                     className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   >
+                     <FaSignInAlt />
+                     SignIn
+                   </Link>
+                 )}
+               </li>
              </>
            ) : (
              <>
@@ -100,30 +132,30 @@ const Navbar = () => {
                    Home
                  </NavLink>
                </li>
+               <div>
+                 <p className="border-t border-gray-300 my-4"></p>
+               </div>
+               <li>
+                 {isSignedIn ? (
+                   <Link
+                     onClick={handleSignOut}
+                     className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   >
+                     <FaSignOutAlt />
+                     SignOut
+                   </Link>
+                 ) : (
+                   <Link
+                     to="/signIn"
+                     className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   >
+                     <FaSignInAlt />
+                     SignIn
+                   </Link>
+                 )}
+               </li>
              </>
            )}
-           <div>
-             <p className="border-t border-gray-300 my-4"></p>
-           </div>
-           <li>
-             {isSignedIn ? (
-               <Link
-                 onClick={handleSignOut}
-                 className="p-2 hover:text-fuchsia-800 hover:bg-white"
-               >
-                 <FaSignOutAlt />
-                 SignOut
-               </Link>
-             ) : (
-               <Link
-                 to="/signIn"
-                 className="p-2 hover:text-fuchsia-800 hover:bg-white"
-               >
-                 <FaSignInAlt />
-                 SignIn
-               </Link>
-             )}
-           </li>
          </ul>
        </div>
        <div className="hidden md:flex w-1/6 md:w-1/5 min-h-full bg-fuchsia-500 fixed z-50 overflow-y-auto">
@@ -166,6 +198,37 @@ const Navbar = () => {
                    Add Item's
                  </NavLink>
                </li>
+               <li>
+                 <NavLink
+                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   to="/dashboard/update"
+                 >
+                   <CiEdit />
+                   Update Item's
+                 </NavLink>
+               </li>
+               <div>
+                 <p className="border-t border-gray-300 my-4"></p>
+               </div>
+               <li>
+                 {isSignedIn ? (
+                   <Link
+                     onClick={handleSignOut}
+                     className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   >
+                     <FaSignOutAlt />
+                     SignOut
+                   </Link>
+                 ) : (
+                   <Link
+                     to="/signIn"
+                     className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   >
+                     <FaSignInAlt />
+                     SignIn
+                   </Link>
+                 )}
+               </li>
              </>
            ) : (
              <>
@@ -179,30 +242,30 @@ const Navbar = () => {
                    Home
                  </NavLink>
                </li>
+               <div>
+                 <p className="border-t border-gray-300 my-4"></p>
+               </div>
+               <li>
+                 {isSignedIn ? (
+                   <Link
+                     onClick={handleSignOut}
+                     className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   >
+                     <FaSignOutAlt />
+                     SignOut
+                   </Link>
+                 ) : (
+                   <Link
+                     to="/signIn"
+                     className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   >
+                     <FaSignInAlt />
+                     SignIn
+                   </Link>
+                 )}
+               </li>
              </>
            )}
-           <div>
-             <p className="border-t border-gray-300 my-4"></p>
-           </div>
-           <li>
-             {isSignedIn ? (
-               <Link
-                 onClick={handleSignOut}
-                 className="p-2 hover:text-fuchsia-800 hover:bg-white"
-               >
-                 <FaSignOutAlt />
-                 SignOut
-               </Link>
-             ) : (
-               <Link
-                 to="/signIn"
-                 className="p-2 hover:text-fuchsia-800 hover:bg-white"
-               >
-                 <FaSignInAlt />
-                 SignIn
-               </Link>
-             )}
-           </li>
          </ul>
        </div>
      </div>

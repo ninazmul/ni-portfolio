@@ -67,7 +67,7 @@ const AllUsers = () => {
         </div>
         <div className="">
           <h1 className="text-center text-4xl pt-4 text-fuchsia-500 font-extrabold uppercase">
-            All User's {users.length}
+            All User's: {users.length}
           </h1>
           <div className="overflow-x-auto">
             <table className="table w-full">
