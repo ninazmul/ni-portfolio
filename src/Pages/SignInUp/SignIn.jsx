@@ -60,9 +60,7 @@ const SignIn = () => {
         axiosPublic.post("/users", userInfo).then((res) => {
           if (res.data.insertedId) {
             showSuccessAlert("Success!", "User signed in successfully!");
-            
           }
-          navigate(from, { replace: true });
         });
 
         Swal.fire({
@@ -70,6 +68,7 @@ const SignIn = () => {
           title: "Successful!",
           text: "Sign In successfully!",
         });
+        navigate(from, { replace: true });
       } else {
         console.error("Error signing in with Google: User not found");
         showErrorAlert("Error", "User not found");

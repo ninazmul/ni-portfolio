@@ -12,7 +12,8 @@ import PasswordReset from "../Pages/SignInUp/PasswordReset";
 import Dashboard from "../Layout/Dashboard";
 import AddItems from "../Layout/AddItems";
 import AllUsers from "../Layout/AllUsers";
-
+import AllItems from "../Layout/AllItems";
+import AdminRoute from "../Routes/AdminRoute"
 
 const routes = createBrowserRouter([
   {
@@ -64,11 +65,27 @@ const routes = createBrowserRouter([
     children: [
       {
         path: "/dashboard/add",
-        element: <AddItems></AddItems>,
+        element: (
+          <AdminRoute>
+            <AddItems></AddItems>
+          </AdminRoute>
+        ),
       },
       {
         path: "/dashboard/users",
-        element: <AllUsers></AllUsers>
+        element: (
+          <AdminRoute>
+            <AllUsers></AllUsers>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "/dashboard/allItems",
+        element: (
+          <AdminRoute>
+            <AllItems></AllItems>
+          </AdminRoute>
+        ),
       },
     ],
   },

@@ -54,19 +54,28 @@ const Navbar = () => {
                <li>
                  <NavLink
                    className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/dashboard/users"
+                   to="/"
                  >
-                   <MdManageAccounts />
-                   User's Details
+                   <FaHome />
+                   Home
                  </NavLink>
                </li>
                <li>
                  <NavLink
                    className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/"
+                   to="/dashboard/users"
+                 >
+                   <MdManageAccounts />
+                   All User's
+                 </NavLink>
+               </li>
+               <li>
+                 <NavLink
+                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   to="/dashboard/allItems"
                  >
                    <SiNginxproxymanager />
-                   Item's Details
+                   All Item's
                  </NavLink>
                </li>
                <li>
@@ -124,19 +133,28 @@ const Navbar = () => {
                <li>
                  <NavLink
                    className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/dashboard/users"
+                   to="/"
                  >
-                   <MdManageAccounts />
-                   User's Details
+                   <FaHome />
+                   Home
                  </NavLink>
                </li>
                <li>
                  <NavLink
                    className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/"
+                   to="/dashboard/users"
+                 >
+                   <MdManageAccounts />
+                   All User's
+                 </NavLink>
+               </li>
+               <li>
+                 <NavLink
+                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   to="/dashboard/allItems"
                  >
                    <SiNginxproxymanager />
-                   Item's Details
+                   All Item's
                  </NavLink>
                </li>
                <li>

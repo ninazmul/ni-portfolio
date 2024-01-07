@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import UserDetails from "../Pages/About/UserDetails";
 import useAxiosSecure from "../Pages/Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
-import { FaUsers } from "react-icons/fa6";
 import { FaTrashCan } from "react-icons/fa6";
 
 
@@ -48,7 +47,7 @@ const AllUsers = () => {
             refetch();
             Swal.fire({
               title: "Deleted!",
-              text: "Your file has been deleted.",
+              text: "User has been deleted.",
               icon: "success",
             });
           }
@@ -71,7 +70,7 @@ const AllUsers = () => {
             All User's {users.length}
           </h1>
           <div className="overflow-x-auto">
-            <table className="table table-zebra w-full">
+            <table className="table w-full">
               {/* head */}
               <thead>
                 <tr>
@@ -105,8 +104,7 @@ const AllUsers = () => {
                         onClick={() => handleDeleteUser(user)}
                         className="btn btn-ghost btn-lg"
                       >
-                        <FaTrashCan
- className="text-red-600"></FaTrashCan>
+                        <FaTrashCan className="text-red-600"></FaTrashCan>
                       </button>
                     </td>
                   </tr>
