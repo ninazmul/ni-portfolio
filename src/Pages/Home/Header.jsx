@@ -24,7 +24,7 @@ const Header = () => {
     return (
       <div>
         <div className="hero min-h-screen">
-          <div className="hero-content flex-col-reverse lg:flex-row-reverse">
+          <div className="hero-content flex-col-reverse md:flex-row-reverse">
             <div data-aos="fade-up">
               <img
                 src="https://i.ibb.co/cCST2NS/1694098148342-removebg-preview.png"
@@ -34,7 +34,7 @@ const Header = () => {
             <div>
               <h1
                 data-aos="fade-right"
-                className="text-3xl md:text-5xl font-bold leading-normal text-center uppercase"
+                className="text-3xl md:text-4xl lg:text-5xl font-bold leading-normal text-center uppercase"
               >
                 Welcome To <span className="text-fuchsia-500">My Website</span>
               </h1>
@@ -95,17 +95,17 @@ const Header = () => {
           </div>
         </div>
         <div className="hero min-h-screen">
-          <div className="hero-content flex-col-reverse lg:flex-row">
-            <div className="" data-aos="fade-down">
+          <div className="hero-content flex-col-reverse md:flex-row justify-center">
+            <div className="md:w-1/2" data-aos="fade-down">
               <img
                 src="https://i.ibb.co/xMvTvmj/IMG-20230527-115144.png"
-                className="rounded-full w-96 border-2 p-1 border-fuchsia-500 img_glow "
+                className="rounded-full border-2 p-1 border-fuchsia-500 img_glow "
               />
             </div>
-            <div className="lg:w-1/2 space-x-4">
+            <div className="md:w-1/2 space-x-4">
               <h1
                 data-aos="fade-left"
-                className="text-3xl md:text-5xl font-bold leading-normal text-center"
+                className="text-3xl md:text-4xl lg:text-5xl font-bold leading-normal text-center"
               >
                 <span className="text-fuchsia-500">ABOUT ME</span>
               </h1>

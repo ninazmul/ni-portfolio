@@ -116,6 +116,15 @@ const Navbar = () => {
                  <p className="border-t border-gray-300 my-4"></p>
                </div>
                <li>
+                 <NavLink
+                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   to="/"
+                 >
+                   <FaHome />
+                   Home
+                 </NavLink>
+               </li>
+               <li>
                  {isSignedIn ? (
                    <Link
                      onClick={handleSignOut}
