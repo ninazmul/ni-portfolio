@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../Pages/Hooks/useAxiosSecure";
 
 const AddItems = () => {
+  const axiosSecure = useAxiosSecure();
   const initialState = {
     category: "",
     projectName: "",
@@ -31,25 +32,42 @@ const AddItems = () => {
       if (
         !formData.category ||
         !formData.projectName ||
-        !formData.createdDate ||
-        !formData.niche ||
-        !formData.liveLink
+        (formData.category === "image" && !formData.imgURL) ||
+        (formData.category === "video" && !formData.videoURL) ||
+        (formData.category === "audio" && !formData.audioURL) ||
+        !formData.niche
       ) {
+        console.log("Validation failed. Check the following fields:");
+        console.log("Category:", !formData.category);
+        console.log("Project Name:", !formData.projectName);
+        console.log(
+          "Image URL:",
+          formData.category === "image" && !formData.imgURL
+        );
+        console.log(
+          "Video URL:",
+          formData.category === "video" && !formData.videoURL
+        );
+        console.log(
+          "Audio URL:",
+          formData.category === "audio" && !formData.audioURL
+        );
+        console.log("Niche:", !formData.niche);
+
         setError("Please fill in all required fields.");
         return;
       }
 
       setError("");
 
-      const response = await useAxiosSecure.post(
-        "http://localhost:5000/items",
+      const response = await axiosSecure.post(
+        "/items",
         formData
       );
 
-      console.log(response); // Log the response object to the console
+      console.log(response);
 
       if (response.data) {
-        // Adjust the success condition based on the actual structure of the response
         Swal.fire({
           icon: "success",
           title: "Product added successfully!",
@@ -57,7 +75,6 @@ const AddItems = () => {
           timer: 1500,
         });
 
-        // Reset the form to its initial state
         e.target.reset();
         setFormData(initialState);
       } else {
@@ -72,9 +89,6 @@ const AddItems = () => {
       setError("An error occurred while adding the product. Please try again.");
     }
   };
-
-
-
 
   return (
     <div className="hero min-h-screen">
@@ -212,7 +226,6 @@ const AddItems = () => {
                     name={field}
                     className="input input-bordered glass border-fuchsia-800 border-2 input_glow"
                     onChange={handleChange}
-                    required
                   />
                 ) : (
                   <input
@@ -235,7 +248,7 @@ const AddItems = () => {
                 className="neno-button font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg py-4 px-8 uppercase relative overflow-hidden text-center"
                 type="submit"
               >
-                Add Product
+                Add Item
               </button>
             </div>
           </form>

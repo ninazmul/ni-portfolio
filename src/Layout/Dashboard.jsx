@@ -9,7 +9,12 @@ import { AuthContext } from "../providers/AuthProviders";
 import UserDetails from "../Pages/About/UserDetails";
 import { CiMenuBurger } from "react-icons/ci";
 import useAdmin from "../Pages/Hooks/useAdmin";
-import { CiEdit } from "react-icons/ci";
+import { MdAdminPanelSettings } from "react-icons/md";
+import { FaUserCheck } from "react-icons/fa";
+import AdminHome from "./AdminUser/AdminHome";
+import UserHome from "./AdminUser/UserHome";
+import { RiUserStarLine } from "react-icons/ri";
+import { GiStarsStack } from "react-icons/gi";
 
 // Navbar component
 const Navbar = () => {
@@ -55,10 +60,10 @@ const Navbar = () => {
                <li>
                  <NavLink
                    className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/"
+                   to="/dashboard/AdminHome"
                  >
-                   <FaHome />
-                   Home
+                   <MdAdminPanelSettings />
+                   Admin Home
                  </NavLink>
                </li>
                <li>
@@ -67,16 +72,7 @@ const Navbar = () => {
                    to="/dashboard/users"
                  >
                    <MdManageAccounts />
-                   All User's
-                 </NavLink>
-               </li>
-               <li>
-                 <NavLink
-                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/dashboard/allItems"
-                 >
-                   <SiNginxproxymanager />
-                   All Item's
+                   Manage User's
                  </NavLink>
                </li>
                <li>
@@ -91,10 +87,29 @@ const Navbar = () => {
                <li>
                  <NavLink
                    className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/dashboard/update"
+                   to="/dashboard/allItems"
                  >
-                   <CiEdit />
-                   Update Item's
+                   <SiNginxproxymanager />
+                   Manage Item's
+                 </NavLink>
+               </li>
+
+               <li>
+                 <NavLink
+                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   to="/dashboard/addReview"
+                 >
+                   <RiUserStarLine />
+                   Add Review's
+                 </NavLink>
+               </li>
+               <li>
+                 <NavLink
+                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   to="/dashboard/allReviews"
+                 >
+                   <GiStarsStack />
+                   Manage Review's
                  </NavLink>
                </li>
                <div>
@@ -126,15 +141,24 @@ const Navbar = () => {
                <li>
                  <NavLink
                    className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   to="/dashboard/userHome"
+                 >
+                   <FaUserCheck />
+                   User Home
+                 </NavLink>
+               </li>
+               <div>
+                 <p className="border-t border-gray-300 my-4"></p>
+               </div>
+               <li>
+                 <NavLink
+                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
                    to="/"
                  >
                    <FaHome />
                    Home
                  </NavLink>
                </li>
-               <div>
-                 <p className="border-t border-gray-300 my-4"></p>
-               </div>
                <li>
                  {isSignedIn ? (
                    <Link
@@ -165,10 +189,10 @@ const Navbar = () => {
                <li>
                  <NavLink
                    className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/"
+                   to="/dashboard/AdminHome"
                  >
-                   <FaHome />
-                   Home
+                   <MdAdminPanelSettings />
+                   Admin Home
                  </NavLink>
                </li>
                <li>
@@ -177,16 +201,7 @@ const Navbar = () => {
                    to="/dashboard/users"
                  >
                    <MdManageAccounts />
-                   All User's
-                 </NavLink>
-               </li>
-               <li>
-                 <NavLink
-                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/dashboard/allItems"
-                 >
-                   <SiNginxproxymanager />
-                   All Item's
+                   Manage User's
                  </NavLink>
                </li>
                <li>
@@ -201,15 +216,43 @@ const Navbar = () => {
                <li>
                  <NavLink
                    className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/dashboard/update"
+                   to="/dashboard/allItems"
                  >
-                   <CiEdit />
-                   Update Item's
+                   <SiNginxproxymanager />
+                   Manage Item's
+                 </NavLink>
+               </li>
+
+               <li>
+                 <NavLink
+                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   to="/dashboard/addReview"
+                 >
+                   <RiUserStarLine />
+                   Add Review's
+                 </NavLink>
+               </li>
+               <li>
+                 <NavLink
+                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   to="/dashboard/allReviews"
+                 >
+                   <GiStarsStack />
+                   Manage Review's
                  </NavLink>
                </li>
                <div>
                  <p className="border-t border-gray-300 my-4"></p>
                </div>
+               <li>
+                 <NavLink
+                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   to="/"
+                 >
+                   <FaHome />
+                   Home
+                 </NavLink>
+               </li>
                <li>
                  {isSignedIn ? (
                    <Link
@@ -236,15 +279,24 @@ const Navbar = () => {
                <li>
                  <NavLink
                    className="p-2 hover:text-fuchsia-800 hover:bg-white"
+                   to="/dashboard/userHome"
+                 >
+                   <FaUserCheck />
+                   User Home
+                 </NavLink>
+               </li>
+               <div>
+                 <p className="border-t border-gray-300 my-4"></p>
+               </div>
+               <li>
+                 <NavLink
+                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
                    to="/"
                  >
                    <FaHome />
                    Home
                  </NavLink>
                </li>
-               <div>
-                 <p className="border-t border-gray-300 my-4"></p>
-               </div>
                <li>
                  {isSignedIn ? (
                    <Link
@@ -276,6 +328,7 @@ const Navbar = () => {
 const ContentArea = () => {
   const location = useLocation();
   const shouldShowUserDetails = location.pathname === "/dashboard";
+  const [isAdmin] = useAdmin();
 
   return (
     <div className="flex-1 overflow-y-auto h-screen">
@@ -285,6 +338,9 @@ const ContentArea = () => {
           <UserDetails />
         </div>
       )}
+      {/* Conditional rendering of AdminHome or UserHome */}
+      {isAdmin && location.pathname === "/dashboard" && <AdminHome />}
+      {!isAdmin && location.pathname === "/dashboard" && <UserHome />}
       {/* Outlet for rendering child components */}
       <Outlet />
     </div>

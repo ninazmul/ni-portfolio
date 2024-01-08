@@ -1,11 +1,15 @@
 import { BsFacebook } from "react-icons/bs";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { TfiEmail } from "react-icons/tfi";
+import { TbBrandFiverr } from "react-icons/tb";
+import { SiUpwork } from "react-icons/si";
+
 import "../../../src/index.css"
 import { Link } from "react-router-dom";
 import Aos from "aos";
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
+import Typewriter from "typewriter-effect";
 
 const Header = () => {
 
@@ -23,7 +27,7 @@ const Header = () => {
           <div className="hero-content flex-col-reverse lg:flex-row-reverse">
             <div data-aos="fade-up">
               <img
-                src="https://i.ibb.co/JzRVm6t/1694098148342-removebg-preview.png"
+                src="https://i.ibb.co/cCST2NS/1694098148342-removebg-preview.png"
                 className="rounded-full border-2 p-1 border-fuchsia-500 img_glow "
               />
             </div>
@@ -34,8 +38,17 @@ const Header = () => {
               >
                 Welcome To <span className="text-fuchsia-500">My Website</span>
               </h1>
-              <p data-aos="fade-left" className="py-6 text-center">
-                Versatile artist with skills in programming, graphics, and voice
+              <p data-aos="fade-left" className="py-6 text-center text-xl">
+                Versatile artist with skills in{" "}
+                <span className="text-fuchsia-500 font-bold">
+                  <Typewriter
+                    options={{
+                      strings: ["", "Programming", "Graphics", "Voice"],
+                      autoStart: true,
+                      loop: true,
+                    }}
+                  />{" "}
+                </span>
               </p>
               <div
                 data-aos="fade-right"
@@ -60,10 +73,22 @@ const Header = () => {
                   <TfiEmail className="text-[28px]"></TfiEmail>
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/ninazmul/"
+                  href="https://www.linkedin.com/in/ninazmul"
                   className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
                 >
                   <AiFillLinkedin className="text-[28px] rounded-full"></AiFillLinkedin>
+                </a>
+                <a
+                  href="https://www.fiverr.com/ninazmul"
+                  className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
+                >
+                  <TbBrandFiverr className="text-[28px] rounded-full"></TbBrandFiverr>
+                </a>
+                <a
+                  href="https://www.upwork.com/freelancers/~01369d0d10ed1780e4"
+                  className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
+                >
+                  <SiUpwork className="text-[28px] rounded-full" />
                 </a>
               </div>
             </div>
@@ -73,7 +98,7 @@ const Header = () => {
           <div className="hero-content flex-col-reverse lg:flex-row">
             <div className="" data-aos="fade-down">
               <img
-                src="https://i.ibb.co/JQRnskq/IMG-20230527-134518.png"
+                src="https://i.ibb.co/xMvTvmj/IMG-20230527-115144.png"
                 className="rounded-full w-96 border-2 p-1 border-fuchsia-500 img_glow "
               />
             </div>
@@ -131,6 +156,18 @@ const Header = () => {
                   className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
                 >
                   <AiFillLinkedin className="text-[28px] rounded-full"></AiFillLinkedin>
+                </a>
+                <a
+                  href="https://www.fiverr.com/ninazmul"
+                  className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
+                >
+                  <TbBrandFiverr className="text-[28px] rounded-full"></TbBrandFiverr>
+                </a>
+                <a
+                  href="https://www.upwork.com/freelancers/~01369d0d10ed1780e4"
+                  className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
+                >
+                  <SiUpwork className="text-[28px] rounded-full" />
                 </a>
               </div>
             </div>

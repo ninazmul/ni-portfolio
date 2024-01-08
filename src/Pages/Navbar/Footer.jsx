@@ -3,6 +3,8 @@ import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import "../../../src/index.css";
 import { Link } from "react-router-dom";
 // import { TfiEmail } from "react-icons/tfi";
+import { TbBrandFiverr } from "react-icons/tb";
+import { SiUpwork } from "react-icons/si";
 
 const Footer = () => {
   return (
@@ -12,7 +14,7 @@ const Footer = () => {
           <Link>
             <img
               className="w-52"
-              src="https://i.ibb.co/rtY75WQ/N-I-Logo-croped.png"
+              src="https://i.ibb.co/353tbns/N-I-Logo-croped.png"
               alt=""
             />
           </Link>
@@ -46,6 +48,18 @@ const Footer = () => {
               className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
             >
               <AiFillLinkedin className="text-[28px] rounded-full"></AiFillLinkedin>
+            </a>
+            <a
+              href="https://www.fiverr.com/ninazmul"
+              className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
+            >
+              <TbBrandFiverr className="text-[28px] rounded-full"></TbBrandFiverr>
+            </a>
+            <a
+              href="https://www.upwork.com/freelancers/~01369d0d10ed1780e4"
+              className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
+            >
+              <SiUpwork className="text-[28px] rounded-full" />
             </a>
           </div>
         </div>

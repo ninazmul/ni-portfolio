@@ -7,6 +7,8 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { FaDownload } from "react-icons/fa";
 import Slider from "../Home/Slider";
+import { TbBrandFiverr } from "react-icons/tb";
+import { SiUpwork } from "react-icons/si";
 
 
 const About = () => {
@@ -24,7 +26,7 @@ const About = () => {
         <div className="hero-content flex-col-reverse lg:flex-row-reverse">
           <div data-aos="fade-up" className="flex-1">
             <img
-              src="https://i.ibb.co/JpKCHwp/1694098009329.jpg"
+              src="https://i.ibb.co/44Vc1cf/1694098009329.jpg"
               className="border-2 p-1 border-fuchsia-500 img_glow "
             />
           </div>
@@ -38,7 +40,10 @@ const About = () => {
             >
               I'm <span className="text-fuchsia-500">Nazmul Islam</span>
             </h1>
-            <p data-aos="fade-left" className="py-6 md:text-xl px-2 md:px-4 text-justify">
+            <p
+              data-aos="fade-left"
+              className="py-6 md:text-xl px-2 md:px-4 text-justify"
+            >
               But you can call me{" "}
               <span className="text-fuchsia-500">N.I. Nazmul</span>. I'm not
               your run-of-the-mill professional; I'm a creative chameleon with a
@@ -95,6 +100,18 @@ const About = () => {
               >
                 <AiFillLinkedin className="text-[28px] rounded-full"></AiFillLinkedin>
               </a>
+              <a
+                href="https://www.fiverr.com/ninazmul"
+                className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
+              >
+                <TbBrandFiverr className="text-[28px] rounded-full"></TbBrandFiverr>
+              </a>
+              <a
+                href="https://www.upwork.com/freelancers/~01369d0d10ed1780e4"
+                className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
+              >
+                <SiUpwork className="text-[28px] rounded-full" />
+              </a>
             </div>
           </div>
         </div>
@@ -110,7 +127,10 @@ const About = () => {
           >
             Summary
           </h1>
-          <p data-aos="fade-left" className="text-justify md:text-xl px-2 md:px-4">
+          <p
+            data-aos="fade-left"
+            className="text-justify md:text-xl px-2 md:px-4"
+          >
             I possess a wide array of creative skills, including proficiency in
             website development, voiceover and dubbing, graphic design, as well
             as photo and video editing. These talents allow me to approach
@@ -120,6 +140,47 @@ const About = () => {
             my skills and experience are finely honed for the job, ensuring
             high-quality outcomes every time.
           </p>
+          <div
+            data-aos="fade-right"
+            className="flex space-x-2 text-center justify-center items-center"
+          >
+            <a
+              href="https://www.facebook.com/nazmulsaw"
+              className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
+            >
+              <BsFacebook className="text-[28px]"></BsFacebook>
+            </a>
+            <a
+              href="https://github.com/ninazmul"
+              className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
+            >
+              <AiFillGithub className="text-[28px]"></AiFillGithub>
+            </a>
+            {/* <a
+                href="/email"
+                className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
+              >
+                <TfiEmail className="text-[28px]"></TfiEmail>
+              </a> */}
+            <a
+              href="https://www.linkedin.com/in/ninazmul/"
+              className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
+            >
+              <AiFillLinkedin className="text-[28px] rounded-full"></AiFillLinkedin>
+            </a>
+            <a
+              href="https://www.fiverr.com/ninazmul"
+              className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
+            >
+              <TbBrandFiverr className="text-[28px] rounded-full"></TbBrandFiverr>
+            </a>
+            <a
+              href="https://www.upwork.com/freelancers/~01369d0d10ed1780e4"
+              className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
+            >
+              <SiUpwork className="text-[28px] rounded-full" />
+            </a>
+          </div>
         </div>
       </div>
 
@@ -129,7 +190,7 @@ const About = () => {
       >
         <a
           data-aos="fade-right"
-          href="https://drive.google.com/file/d/19uV3Bw3Red_WC96L8Q7IAopGJ-CtxeiR/view?usp=sharing"
+          href="https://drive.google.com/file/d/1NzJUC53OkBVPZLQPKhZeUJIjTkQg85M2/view?usp=sharing"
           className="btn btn-outline font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg uppercase relative overflow-hidden text-center my-1 text-xl w-72 text-white hover:text-none"
         >
           Download RESUME{" "}
@@ -139,7 +200,7 @@ const About = () => {
         </a>
         <a
           data-aos="fade-left"
-          href="https://drive.google.com/file/d/1zbkc1hdZ1Ip6VQfFNFgrQD6lDsoxu5SY/view?usp=sharing"
+          href="https://drive.google.com/file/d/1U2xgiPDHVTLAG7yZ4_esS3Vc9GUQIaI9/view?usp=sharing"
           className="btn btn-outline font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg uppercase relative overflow-hidden text-center my-1 text-xl w-72 text-white hover:text-none"
         >
           Download CV{" "}

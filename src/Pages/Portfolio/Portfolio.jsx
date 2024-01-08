@@ -3,6 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import useItem from "./useItem";
 import ItemTab from "./ItemTab";
+import Reviews from "./Review/Reviews";
 
 const itemsPerPage = 30;
 
@@ -27,17 +28,18 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="pt-4">
+    <div className="pt-4" data-aos="fade-up">
       <Tabs>
         <TabList>
           <Tab>All</Tab>
           <Tab>Programming</Tab>
           <Tab>Voice</Tab>
           <Tab>Graphics</Tab>
+          <Tab>All Reviews</Tab>
         </TabList>
 
         <TabPanel>
-          <ItemTab items={getPageItems(allItems)}></ItemTab>
+          <ItemTab items={getPageItems(allItems)} />
           {/* Pagination controls */}
           <Pagination
             currentPage={currentPage}
@@ -46,7 +48,7 @@ const Portfolio = () => {
           />
         </TabPanel>
         <TabPanel>
-          <ItemTab items={getPageItems(programming)}></ItemTab>
+          <ItemTab items={getPageItems(programming)} />
           {/* Pagination controls */}
           <Pagination
             currentPage={currentPage}
@@ -55,7 +57,7 @@ const Portfolio = () => {
           />
         </TabPanel>
         <TabPanel>
-          <ItemTab items={getPageItems(voice)}></ItemTab>
+          <ItemTab items={getPageItems(voice)} />
           {/* Pagination controls */}
           <Pagination
             currentPage={currentPage}
@@ -64,11 +66,20 @@ const Portfolio = () => {
           />
         </TabPanel>
         <TabPanel>
-          <ItemTab items={getPageItems(graphics)}></ItemTab>
+          <ItemTab items={getPageItems(graphics)} />
           {/* Pagination controls */}
           <Pagination
             currentPage={currentPage}
             totalPages={Math.ceil(graphics.length / itemsPerPage)}
+            onPageChange={handlePageChange}
+          />
+        </TabPanel>
+        <TabPanel>
+          <Reviews />
+          {/* Pagination controls for Reviews */}
+          <Pagination
+            currentPage={currentPage}
+            totalPages={Math.ceil(allItems.length / itemsPerPage)}
             onPageChange={handlePageChange}
           />
         </TabPanel>

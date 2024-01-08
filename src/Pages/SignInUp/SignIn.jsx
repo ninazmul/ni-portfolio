@@ -9,6 +9,7 @@ import { AuthContext } from "../../providers/AuthProviders";
 import Swal from "sweetalert2";
 import { FcGoogle } from "react-icons/fc";
 import useAxiosPublic from "../Hooks/useAxiosPublic";
+import { getAuth } from "firebase/auth";
 
 const SignIn = () => {
   const [disabled, setDisabled] = useState(true);
@@ -16,6 +17,7 @@ const SignIn = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const axiosPublic = useAxiosPublic();
+  const auth = getAuth();
 
   const from = location.state?.from?.pathname || "/";
 
@@ -26,24 +28,23 @@ const SignIn = () => {
     const password = form.password.value;
 
     try {
-      const result = await signIn(email, password);
-      const user = result.user;
-      console.log("Sign-in successful:", user);
-      Swal.fire({
-        icon: "success",
-        title: "Successful!",
-        text: "Sign In successfully!",
-      });
-      navigate(from, { replace: true });
+      await signIn(email, password);
+      const currentUser = auth.currentUser;
+
+      if (currentUser) {
+        console.log("Sign-in successful:", currentUser);
+        showSuccessAlert("Success!", "Sign In successfully!");
+        navigate(from, { replace: true });
+      } else {
+        console.error("Error signing in: User not found");
+        showErrorAlert("Error", "User not found");
+      }
     } catch (error) {
       console.error("Sign-in error:", error.code, error.message);
-      Swal.fire({
-        icon: "error",
-        title: "Oops..!",
-        text: "No user found, Sign In failed!",
-      });
+      showErrorAlert("Error", "Sign In failed!");
     }
   };
+
 
   const handleGoogleSignIn = async () => {
     try {

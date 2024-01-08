@@ -2,11 +2,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../Pages/Hooks/useAxiosSecure";
 
 const UpdateItem = () => {
     const items = useLoaderData();
     const navigate = useNavigate();
-    const location = useLocation();
+  const location = useLocation();
+  const axiosSecure = useAxiosSecure();
     const from = location.state?.from?.pathname || "/";
   const initialState = {
     category: "",
@@ -39,21 +41,15 @@ const UpdateItem = () => {
     e.preventDefault();
 
     try {
-      if (
-        !formData.category ||
-        !formData.projectName ||
-        !formData.createdDate ||
-        !formData.niche ||
-        !formData.liveLink
-      ) {
+      if (!formData.category || !formData.projectName || !formData.niche) {
         setError("Please fill in all required fields.");
         return;
       }
 
       setError("");
 
-      const response = await axios.patch(
-        `http://localhost:5000/items/${items._id}`, 
+      const response = await axiosSecure.patch(
+        `/items/${items._id}`,
         formData
       );
 
@@ -66,7 +62,7 @@ const UpdateItem = () => {
           showConfirmButton: false,
           timer: 1500,
         });
-          navigate(from, { replace: true });
+        navigate(from, { replace: true });
       } else {
         Swal.fire({
           icon: "error",
@@ -225,7 +221,6 @@ const UpdateItem = () => {
                     className="input input-bordered glass border-fuchsia-800 border-2 input_glow"
                     onChange={handleChange}
                     defaultValue={items[field]}
-                    required
                   />
                 ) : (
                   <input
@@ -249,7 +244,7 @@ const UpdateItem = () => {
                 className="neno-button font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg py-4 px-8 uppercase relative overflow-hidden text-center"
                 type="submit"
               >
-                Update Product
+                Update Item
               </button>
             </div>
           </form>

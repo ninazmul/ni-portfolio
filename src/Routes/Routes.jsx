@@ -13,8 +13,14 @@ import Dashboard from "../Layout/Dashboard";
 import AddItems from "../Layout/AddItems";
 import AllUsers from "../Layout/AllUsers";
 import AllItems from "../Layout/AllItems";
-import AdminRoute from "../Routes/AdminRoute"
+import AdminRoute from "../Routes/AdminRoute";
 import UpdateItem from "../Layout/UpdateItem";
+import UserHome from "../Layout/AdminUser/UserHome";
+import AdminHome from "../Layout/AdminUser/AdminHome";
+import AddReview from "../Layout/AddReview";
+import UpdateReview from "../Layout/UpdateReview";
+import AllReviews from "../Layout/AllReviews";
+import Reviews from "../Pages/Portfolio/Review/Reviews";
 
 const routes = createBrowserRouter([
   {
@@ -43,6 +49,10 @@ const routes = createBrowserRouter([
         ),
       },
       {
+        path: "/reviews",
+        element: <Reviews></Reviews>,
+      },
+      {
         path: "/signIn",
         element: <SignIn></SignIn>,
       },
@@ -65,6 +75,18 @@ const routes = createBrowserRouter([
     ),
     children: [
       {
+        path: "/dashboard/userHome",
+        element: <UserHome></UserHome>,
+      },
+      {
+        path: "/dashboard/AdminHome",
+        element: (
+          <AdminRoute>
+            <AdminHome></AdminHome>
+          </AdminRoute>
+        ),
+      },
+      {
         path: "/dashboard/add",
         element: (
           <AdminRoute>
@@ -79,7 +101,10 @@ const routes = createBrowserRouter([
             <UpdateItem></UpdateItem>
           </AdminRoute>
         ),
-        loader: ({params}) => fetch(`http://localhost:5000/items/${params.id}`),
+        loader: ({ params }) =>
+          fetch(
+            `https://portfolio-server-umber-pi.vercel.app/items/${params.id}`
+          ),
       },
       {
         path: "/dashboard/users",
@@ -94,6 +119,30 @@ const routes = createBrowserRouter([
         element: (
           <AdminRoute>
             <AllItems></AllItems>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "/dashboard/addReview",
+        element: <AddReview></AddReview>,
+      },
+      {
+        path: "/dashboard/updateReview/:id",
+        element: (
+          <AdminRoute>
+            <UpdateReview></UpdateReview>
+          </AdminRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://portfolio-server-umber-pi.vercel.app/reviews/${params.id}`
+          ),
+      },
+      {
+        path: "/dashboard/allReviews",
+        element: (
+          <AdminRoute>
+            <AllReviews></AllReviews>
           </AdminRoute>
         ),
       },

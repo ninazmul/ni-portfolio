@@ -91,7 +91,7 @@ const Navbar = () => {
           <NavLink to="/">
             <img
               className="normal-case w-32 text-xl"
-              src="https://i.ibb.co/rtY75WQ/N-I-Logo-croped.png"
+              src="https://i.ibb.co/353tbns/N-I-Logo-croped.png"
               alt=""
             />
           </NavLink>
