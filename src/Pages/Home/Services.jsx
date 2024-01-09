@@ -356,7 +356,6 @@ const Services = () => {
                 </p>
                 <div className="modal-action">
                   <form method="dialog">
-                    {/* if there is a button in form, it will close the modal */}
                     <button className="btn btn-outline text-white neno-button font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-2xl uppercase relative overflow-hidden text-center">
                       Close
                     </button>

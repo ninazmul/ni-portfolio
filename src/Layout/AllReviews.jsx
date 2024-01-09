@@ -65,7 +65,13 @@ const AllReviews = () => {
               {reviews.map((review, index) => (
                 <tr key={review._id}>
                   <th>{index + 1}</th>
-                  <td>{review.image}</td>
+                  <td>
+                    <img
+                      className="w-20 h-10 rounded-lg"
+                      src={review.image}
+                      alt=""
+                    />
+                  </td>
                   <td>{review.rating}</td>
                   <td>
                     <Link

@@ -50,7 +50,7 @@ export const ContactUs = () => {
               <input
                 type="text"
                 placeholder="Your Name"
-                defaultValue={user.displayName}
+                defaultValue={user?.displayName}
                 name="user_name"
                 className="input input-bordered glass border-fuchsia-800 border-2 input_glow"
                 required
@@ -63,7 +63,7 @@ export const ContactUs = () => {
               <input
                 type="email"
                 placeholder="Your Email"
-                defaultValue={user.email}
+                defaultValue={user?.email}
                 name="user_email"
                 className="input input-bordered glass border-fuchsia-800 border-2 input_glow"
                 required
@@ -73,13 +73,12 @@ export const ContactUs = () => {
               <label className="label">
                 <span className="">Your Message</span>
               </label>
-              <input
-                type="text"
+              <textarea
                 placeholder="Write your message..."
                 name="message"
-                className="input input-bordered glass border-fuchsia-800 border-2 input_glow pt-6 pb-20"
+                className="textarea input-bordered glass border-fuchsia-800 border-2 input_glow pt-6 pb-20"
                 required
-              />
+              ></textarea>
             </div>
 
             <div className="form-control mt-6">
