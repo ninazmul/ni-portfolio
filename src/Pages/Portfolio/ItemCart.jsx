@@ -1,16 +1,27 @@
 import { Link } from "react-router-dom";
+import ReactPlayer from "react-player";
 
 const ItemCart = ({ item }) => {
   const { imgURL, videoURL, audioURL, projectName, createdDate, liveLink } =
     item;
 
   return (
-    <div>
-      <div className="card w-full h-full glass">
+    <div className="flex items-center justify-center h-full">
+      <div className="card w-full h-full max-w-md glass">
         <figure className="h-3/5">
-          {imgURL && <img src={imgURL} alt="Project" />}
-          {videoURL && <video src={videoURL} controls alt="Project Video" />}
-          {audioURL && <audio src={audioURL} controls alt="Project Audio" />}
+          {imgURL && (
+            <img
+              src={imgURL}
+              alt="Project"
+              className="w-full h-full object-cover"
+            />
+          )}
+          {videoURL && (
+            <ReactPlayer controls url={videoURL} width="100%" />
+          )}
+          {audioURL && (
+            <ReactPlayer controls url={audioURL} width="100%" />
+          )}
         </figure>
         <div className="card-body">
           <h2 className="card-title">{projectName}</h2>

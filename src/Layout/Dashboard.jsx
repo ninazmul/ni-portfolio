@@ -53,7 +53,7 @@ const Navbar = () => {
          </div>
          <ul
            tabIndex={0}
-           className="dropdown-content z-[1] menu p-2 shadow bg-fuchsia-500 rounded-box w-52"
+           className="dropdown-content z-[1] menu p-2 shadow bg-fuchsia-500 rounded-box w-52 text-lg"
          >
            {isAdmin ? (
              <>
