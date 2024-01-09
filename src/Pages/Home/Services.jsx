@@ -1,6 +1,10 @@
 import { FaCode } from "react-icons/fa";
 import { MdSettingsVoice } from "react-icons/md";
 import { SiTaichigraphics } from "react-icons/si";
+import { MdCoPresent } from "react-icons/md";
+import { TfiWrite } from "react-icons/tfi";
+import { TbBusinessplan } from "react-icons/tb";
+
 
 const Services = () => {
   return (
@@ -8,7 +12,7 @@ const Services = () => {
       <h1 className="text-3xl md:text-5xl font-bold leading-normal text-center uppercase py-6">
         All <span className="text-fuchsia-500">Services</span>
       </h1>
-      <div className="flex text-center justify-around">
+      <div className="grid grid-cols-3 gap-4 justify-items-center">
         <div>
           <button
             onClick={() => document.getElementById("my_modal_1").showModal()}
@@ -93,7 +97,8 @@ const Services = () => {
                   content. <br /> 2. Ensuring high-quality lip-syncing and
                   natural flow for an authentic viewing experience. <br />{" "}
                   <span className="font-bold underline">
-                    Script Adaptation and Translation $5/500<span className="text-xs">Words</span>:
+                    Script Adaptation and Translation $5/500
+                    <span className="text-xs">Words</span>:
                   </span>{" "}
                   <br /> 1. Assisting with script adaptation and translation to
                   maintain cultural nuances and linguistic accuracy. <br /> 2.
@@ -139,7 +144,9 @@ const Services = () => {
               <div className="modal-box glass">
                 <h3 className="font-bold text-lg">As-salamu alaykum!</h3>
                 <p className="py-4 text-start">
-                  <span className="font-bold text-xl">Services Offered $10:</span>
+                  <span className="font-bold text-xl">
+                    Services Offered $10:
+                  </span>
                   <br />
                   <span className="font-bold underline">Logo Design:</span>{" "}
                   <br />
@@ -178,6 +185,174 @@ const Services = () => {
                   <br /> 1. Custom illustrations to add a personal touch to your
                   projects. <br /> 2. Digital or hand-drawn illustrations based
                   on your preferences.
+                </p>
+                <div className="modal-action">
+                  <form method="dialog">
+                    {/* if there is a button in form, it will close the modal */}
+                    <button className="btn btn-outline text-white neno-button font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-2xl uppercase relative overflow-hidden text-center">
+                      Close
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </dialog>
+          </div>
+        </div>
+        <div>
+          <button
+            onClick={() => document.getElementById("my_modal_4").showModal()}
+            className="neno-button font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-2xl p-8 uppercase relative overflow-hidden text-center text-2xl md:text-8xl"
+          >
+            <MdCoPresent />
+          </button>
+          <div className="">
+            <dialog
+              id="my_modal_4"
+              className="modal modal-bottom sm:modal-middle"
+            >
+              <div className="modal-box glass">
+                <h3 className="font-bold text-lg">As-salamu alaykum!</h3>
+                <p className="py-4 text-start">
+                  <span className="font-bold text-xl">Services Offered:</span>
+                  <br />
+                  <span className="font-bold underline">
+                    Spokesperson Videos $5/min:
+                  </span>{" "}
+                  <br />
+                  Engage your audience with a charismatic presenter delivering
+                  your message. <br />
+                  <span className="font-bold underline">
+                    Green Screen Services $10/min:
+                  </span>{" "}
+                  <br /> Elevate your visuals with our professional studio and
+                  customizable backgrounds. <br />
+                  <span className="font-bold underline">
+                    Promotional Videos $50/min:
+                  </span>{" "}
+                  <br />
+                  Boost your brand with captivating promotional content
+                  integrated seamlessly into your presentations.
+                </p>
+                <div className="modal-action">
+                  <form method="dialog">
+                    {/* if there is a button in form, it will close the modal */}
+                    <button className="btn btn-outline text-white neno-button font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-2xl uppercase relative overflow-hidden text-center">
+                      Close
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </dialog>
+          </div>
+        </div>
+        <div>
+          <button
+            onClick={() => document.getElementById("my_modal_5").showModal()}
+            className="neno-button font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-2xl p-8 uppercase relative overflow-hidden text-center text-2xl md:text-8xl"
+          >
+            <TfiWrite />
+          </button>
+          <div className="">
+            <dialog
+              id="my_modal_5"
+              className="modal modal-bottom sm:modal-middle"
+            >
+              <div className="modal-box glass">
+                <h3 className="font-bold text-lg">As-salamu alaykum!</h3>
+                <p className="py-4 text-start">
+                  <span className="font-bold text-xl">Services Offered:</span>
+                  <br />
+                  <span className="font-bold underline">
+                    Translation Services: $5/500
+                    <span className="text-xs">Words</span>:
+                  </span>{" "}
+                  <br />
+                  My translation service specializes in providing accurate and
+                  culturally nuanced translations between Bengali and English. I
+                  guarantee translations that resonate effectively with your
+                  target audience. <br />
+                  <span className="font-bold underline">
+                    Subtitle Integration $5/500
+                    <span className="text-xs">Words</span>:
+                  </span>{" "}
+                  <br /> I excel in providing comprehensive subtitle services
+                  for your videos. This includes expertly integrating subtitles,
+                  ensuring perfect synchronization with the audio, and
+                  delivering a visually appealing format. My focus is on
+                  delivering a seamless and professional subtitle experience for
+                  your content.
+                </p>
+                <div className="modal-action">
+                  <form method="dialog">
+                    {/* if there is a button in form, it will close the modal */}
+                    <button className="btn btn-outline text-white neno-button font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-2xl uppercase relative overflow-hidden text-center">
+                      Close
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </dialog>
+          </div>
+        </div>
+        <div>
+          <button
+            onClick={() => document.getElementById("my_modal_6").showModal()}
+            className="neno-button font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-2xl p-8 uppercase relative overflow-hidden text-center text-2xl md:text-8xl"
+          >
+            <TbBusinessplan />
+          </button>
+          <div className="">
+            <dialog
+              id="my_modal_6"
+              className="modal modal-bottom sm:modal-middle"
+            >
+              <div className="modal-box glass">
+                <h3 className="font-bold text-lg">As-salamu alaykum!</h3>
+                <p className="py-4 text-start">
+                  <span className="font-bold text-xl">Services Offered:</span>
+                  <br />
+                  <span className="font-bold underline">
+                    Website Creation:
+                  </span>{" "}
+                  <br />
+                  I bring your vision to life with captivating and functional
+                  websites. My expertise ensures that your online presence is
+                  not just a website but a dynamic platform that engages and
+                  converts visitors into customers. <br />
+                  <span className="font-bold underline">
+                    Logo and Branding Graphics:
+                  </span>{" "}
+                  <br /> Make a lasting impression with a unique and memorable
+                  brand identity. I design logos and branding graphics,
+                  including banners, covers, and social media posts, that
+                  capture the essence of your business and resonate with your
+                  target audience. <br />
+                  <span className="font-bold underline">
+                    Promotional and Product Review Videos:
+                  </span>{" "}
+                  <br />
+                  Elevate your brand with compelling video content. From
+                  engaging promotional videos that tell your brand story to
+                  detailed product review videos that build trust, I create
+                  content that leaves a lasting impact.
+                  <br />
+                  <span className="font-bold underline">
+                    Website and Business Maintenance:
+                  </span>{" "}
+                  <br />
+                  My commitment doesn’t end with the launch of your website. I
+                  provide ongoing maintenance to ensure your online platform is
+                  secure, up-to-date, and optimized for performance. Focus on
+                  your core operations while I handle the technicalities.
+                  <br />
+                  <span className="font-bold underline">
+                    Business Boost and Promotion:
+                  </span>{" "}
+                  <br />
+                  Amplify your reach and impact with my strategic business
+                  boosting and promotion services. From targeted marketing
+                  campaigns to social media strategies, I ensure your business
+                  gets the attention it deserves.
                 </p>
                 <div className="modal-action">
                   <form method="dialog">
