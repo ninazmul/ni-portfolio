@@ -4,34 +4,35 @@ import Swal from "sweetalert2";
 import useAuth from "../Hooks/useAuth";
 
 export const ContactUs = () => {
-  const form = useRef();
-  const { user } = useAuth();
+   const form = useRef();
+   const { user } = useAuth();
 
-    const sendEmail = (e) => {
-  e.preventDefault();
+   const sendEmail = (e) => {
+     e.preventDefault();
 
-  emailjs
-    .sendForm(
-      "service_lu6mcpw",
-      "template_vtjc662",
-      form.current,
-      "zI5ie0ibLaamw9QaF"
-    )
-    .then(
-      (result) => {
-        console.log(result.text);
-        Swal.fire({
-          icon: "success",
-          title: "Email sent successfully!",
-          text: "Your message has been sent to N.I..",
-        });
-      },
-      (error) => {
-        console.log(error.text);
-      }
-    );
-};
-
+     emailjs
+       .sendForm(
+         "service_lu6mcpw",
+         "template_vtjc662",
+         form.current,
+         "zI5ie0ibLaamw9QaF"
+       )
+       .then(
+         (result) => {
+           console.log(result.text);
+           Swal.fire({
+             icon: "success",
+             title: "Email sent successfully!",
+             text: "Your message has been sent to N.I..",
+           });
+           // Reset the form after successful email send
+           form.current.reset();
+         },
+         (error) => {
+           console.log(error.text);
+         }
+       );
+   };
     
   return (
     <div className="py-4 flex flex-col items-center justify-center">
