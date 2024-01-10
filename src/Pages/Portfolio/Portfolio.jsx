@@ -4,19 +4,18 @@ import "react-tabs/style/react-tabs.css";
 import useItem from "./useItem";
 import ItemTab from "./ItemTab";
 import Reviews from "./Review/Reviews";
+import { BiSearchAlt } from "react-icons/bi";
 
 const itemsPerPage = 30;
 
 const Portfolio = () => {
   const [item] = useItem();
   const [currentPage, setCurrentPage] = useState(1);
-  const [reviewsPage, setReviewsPage] = useState(1); // New state for reviews pagination
+  const [searchTerm, setSearchTerm] = useState("");
 
   const programming = item.filter((item) => item.niche === "Programming");
   const voice = item.filter((item) => item.niche === "Voice");
   const graphics = item.filter((item) => item.niche === "Graphics");
-
-  const allItems = item; // All items
 
   const getPageItems = (items) => {
     const startIndex = (currentPage - 1) * itemsPerPage;
@@ -26,7 +25,6 @@ const Portfolio = () => {
 
   const allItemsInSequence = [];
 
-  // Iterate through items in sequence, filling in missing niches
   for (
     let i = 0;
     i < Math.max(programming.length, voice.length, graphics.length);
@@ -41,54 +39,99 @@ const Portfolio = () => {
     setCurrentPage(selectedPage);
   };
 
-  const handleReviewsPageChange = (selectedPage) => {
-    setReviewsPage(selectedPage);
+  const handleSearchChange = (e) => {
+    setCurrentPage(1);
+    setSearchTerm(e.target.value);
   };
+
+  const filteredProgramming = programming.filter((item) =>
+    item.projectName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  const filteredVoice = voice.filter((item) =>
+    item.projectName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  const filteredGraphics = graphics.filter((item) =>
+    item.projectName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  const filteredAllItemsInSequence = allItemsInSequence.filter((item) =>
+    item.projectName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className="pt-4" data-aos="fade-up">
       <Tabs>
         <TabList>
-          <Tab>All</Tab>
-          <Tab>Programming</Tab>
-          <Tab>Voice</Tab>
-          <Tab>Graphics</Tab>
-          <Tab>All Reviews</Tab>
+          <div className="flex items-center justify-between">
+            <div>
+              <Tab>All</Tab>
+              <Tab>Programming</Tab>
+              <Tab>Voice</Tab>
+              <Tab>Graphics</Tab>
+              <Tab>All Reviews</Tab>
+            </div>
+            <div>
+              <li className="relative">
+                <div className="text-end">
+                  <div className="dropdown dropdown-end">
+                    <div tabIndex={0} role="button" className="text-xl">
+                      <BiSearchAlt />
+                    </div>
+                    <ul
+                      tabIndex={0}
+                      className="dropdown-content z-[1] menu p-2 rounded-box w-52"
+                    >
+                      <li>
+                        <input
+                          type="text"
+                          placeholder="Search by project name"
+                          value={searchTerm}
+                          onChange={handleSearchChange}
+                          className="p-2 border-fuchsia-500 rounded shadow-lg glass"
+                        />
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </div>
+          </div>
         </TabList>
 
         <TabPanel>
-          <ItemTab items={getPageItems(allItemsInSequence)} />
+          <ItemTab items={getPageItems(filteredAllItemsInSequence)} />
           {/* Pagination controls */}
           <Pagination
             currentPage={currentPage}
-            totalPages={Math.ceil(allItemsInSequence.length / itemsPerPage)}
+            totalPages={Math.ceil(
+              filteredAllItemsInSequence.length / itemsPerPage
+            )}
             onPageChange={handlePageChange}
           />
         </TabPanel>
         <TabPanel>
-          <ItemTab items={getPageItems(programming)} />
+          <ItemTab items={getPageItems(filteredProgramming)} />
           {/* Pagination controls */}
           <Pagination
             currentPage={currentPage}
-            totalPages={Math.ceil(programming.length / itemsPerPage)}
+            totalPages={Math.ceil(filteredProgramming.length / itemsPerPage)}
             onPageChange={handlePageChange}
           />
         </TabPanel>
         <TabPanel>
-          <ItemTab items={getPageItems(voice)} />
+          <ItemTab items={getPageItems(filteredVoice)} />
           {/* Pagination controls */}
           <Pagination
             currentPage={currentPage}
-            totalPages={Math.ceil(voice.length / itemsPerPage)}
+            totalPages={Math.ceil(filteredVoice.length / itemsPerPage)}
             onPageChange={handlePageChange}
           />
         </TabPanel>
         <TabPanel>
-          <ItemTab items={getPageItems(graphics)} />
+          <ItemTab items={getPageItems(filteredGraphics)} />
           {/* Pagination controls */}
           <Pagination
             currentPage={currentPage}
-            totalPages={Math.ceil(graphics.length / itemsPerPage)}
+            totalPages={Math.ceil(filteredGraphics.length / itemsPerPage)}
             onPageChange={handlePageChange}
           />
         </TabPanel>
