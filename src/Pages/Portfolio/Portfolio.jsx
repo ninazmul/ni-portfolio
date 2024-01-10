@@ -10,6 +10,7 @@ const itemsPerPage = 30;
 const Portfolio = () => {
   const [item] = useItem();
   const [currentPage, setCurrentPage] = useState(1);
+  const [reviewsPage, setReviewsPage] = useState(1); // New state for reviews pagination
 
   const programming = item.filter((item) => item.niche === "Programming");
   const voice = item.filter((item) => item.niche === "Voice");
@@ -23,8 +24,25 @@ const Portfolio = () => {
     return items.slice(startIndex, endIndex);
   };
 
+  const allItemsInSequence = [];
+
+  // Iterate through items in sequence, filling in missing niches
+  for (
+    let i = 0;
+    i < Math.max(programming.length, voice.length, graphics.length);
+    i++
+  ) {
+    if (programming[i]) allItemsInSequence.push(programming[i]);
+    if (voice[i]) allItemsInSequence.push(voice[i]);
+    if (graphics[i]) allItemsInSequence.push(graphics[i]);
+  }
+
   const handlePageChange = (selectedPage) => {
     setCurrentPage(selectedPage);
+  };
+
+  const handleReviewsPageChange = (selectedPage) => {
+    setReviewsPage(selectedPage);
   };
 
   return (
@@ -39,11 +57,11 @@ const Portfolio = () => {
         </TabList>
 
         <TabPanel>
-          <ItemTab items={getPageItems(allItems)} />
+          <ItemTab items={getPageItems(allItemsInSequence)} />
           {/* Pagination controls */}
           <Pagination
             currentPage={currentPage}
-            totalPages={Math.ceil(allItems.length / itemsPerPage)}
+            totalPages={Math.ceil(allItemsInSequence.length / itemsPerPage)}
             onPageChange={handlePageChange}
           />
         </TabPanel>
@@ -75,13 +93,7 @@ const Portfolio = () => {
           />
         </TabPanel>
         <TabPanel>
-          <Reviews />
-          {/* Pagination controls for Reviews */}
-          <Pagination
-            currentPage={currentPage}
-            totalPages={Math.ceil(allItems.length / itemsPerPage)}
-            onPageChange={handlePageChange}
-          />
+          <Reviews currentPage={currentPage} onPageChange={handlePageChange} />
         </TabPanel>
       </Tabs>
     </div>
