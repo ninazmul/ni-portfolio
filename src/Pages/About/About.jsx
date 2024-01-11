@@ -72,47 +72,6 @@ const About = () => {
               experiences I share with people like you. Thanks for taking the
               time to get to know me!
             </p>
-            <div
-              data-aos="fade-right"
-              className="flex space-x-2 text-center justify-center items-center"
-            >
-              <a
-                href="https://www.facebook.com/nazmulsaw"
-                className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
-              >
-                <BsFacebook className="text-[28px]"></BsFacebook>
-              </a>
-              <a
-                href="https://github.com/ninazmul"
-                className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
-              >
-                <AiFillGithub className="text-[28px]"></AiFillGithub>
-              </a>
-              {/* <a
-                href="/email"
-                className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
-              >
-                <TfiEmail className="text-[28px]"></TfiEmail>
-              </a> */}
-              <a
-                href="https://www.linkedin.com/in/ninazmul/"
-                className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
-              >
-                <AiFillLinkedin className="text-[28px] rounded-full"></AiFillLinkedin>
-              </a>
-              <a
-                href="https://www.fiverr.com/ninazmul"
-                className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
-              >
-                <TbBrandFiverr className="text-[28px] rounded-full"></TbBrandFiverr>
-              </a>
-              <a
-                href="https://www.upwork.com/freelancers/~01369d0d10ed1780e4"
-                className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
-              >
-                <SiUpwork className="text-[28px] rounded-full" />
-              </a>
-            </div>
           </div>
         </div>
       </div>
@@ -141,73 +100,31 @@ const About = () => {
             high-quality outcomes every time.
           </p>
           <div
-            data-aos="fade-right"
-            className="flex space-x-2 text-center justify-center items-center"
+            data-aos="fade-up"
+            className="flex flex-col items-center justify-center py-4"
           >
             <a
-              href="https://www.facebook.com/nazmulsaw"
-              className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
+              data-aos="fade-right"
+              href="https://drive.google.com/file/d/1NzJUC53OkBVPZLQPKhZeUJIjTkQg85M2/view?usp=sharing"
+              className="btn btn-outline font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg uppercase relative overflow-hidden text-center my-1 text-xl w-72 text-white hover:text-none"
             >
-              <BsFacebook className="text-[28px]"></BsFacebook>
+              Download RESUME{" "}
+              <span>
+                <FaDownload />
+              </span>
             </a>
             <a
-              href="https://github.com/ninazmul"
-              className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
+              data-aos="fade-left"
+              href="https://drive.google.com/file/d/1U2xgiPDHVTLAG7yZ4_esS3Vc9GUQIaI9/view?usp=sharing"
+              className="btn btn-outline font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg uppercase relative overflow-hidden text-center my-1 text-xl w-72 text-white hover:text-none"
             >
-              <AiFillGithub className="text-[28px]"></AiFillGithub>
-            </a>
-            {/* <a
-                href="/email"
-                className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
-              >
-                <TfiEmail className="text-[28px]"></TfiEmail>
-              </a> */}
-            <a
-              href="https://www.linkedin.com/in/ninazmul/"
-              className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
-            >
-              <AiFillLinkedin className="text-[28px] rounded-full"></AiFillLinkedin>
-            </a>
-            <a
-              href="https://www.fiverr.com/ninazmul"
-              className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
-            >
-              <TbBrandFiverr className="text-[28px] rounded-full"></TbBrandFiverr>
-            </a>
-            <a
-              href="https://www.upwork.com/freelancers/~01369d0d10ed1780e4"
-              className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
-            >
-              <SiUpwork className="text-[28px] rounded-full" />
+              Download CV{" "}
+              <span>
+                <FaDownload />
+              </span>
             </a>
           </div>
         </div>
-      </div>
-
-      <div
-        data-aos="fade-up"
-        className="flex flex-col items-center justify-center py-4"
-      >
-        <a
-          data-aos="fade-right"
-          href="https://drive.google.com/file/d/1NzJUC53OkBVPZLQPKhZeUJIjTkQg85M2/view?usp=sharing"
-          className="btn btn-outline font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg uppercase relative overflow-hidden text-center my-1 text-xl w-72 text-white hover:text-none"
-        >
-          Download RESUME{" "}
-          <span>
-            <FaDownload />
-          </span>
-        </a>
-        <a
-          data-aos="fade-left"
-          href="https://drive.google.com/file/d/1U2xgiPDHVTLAG7yZ4_esS3Vc9GUQIaI9/view?usp=sharing"
-          className="btn btn-outline font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg uppercase relative overflow-hidden text-center my-1 text-xl w-72 text-white hover:text-none"
-        >
-          Download CV{" "}
-          <span>
-            <FaDownload />
-          </span>
-        </a>
       </div>
     </div>
   );
