@@ -143,7 +143,7 @@ const Header = () => {
                 <TfiEmail className="text-[28px]"></TfiEmail>
               </a>
               <a
-                href="https://www.linkedin.com/in/ninazmul/"
+                href="https://www.linkedin.com/in/ninazmul"
                 className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
               >
                 <AiFillLinkedin className="text-[28px] rounded-full"></AiFillLinkedin>
