@@ -119,48 +119,6 @@ const Header = () => {
                 RESUME
               </button>
             </Link>
-
-            <div
-              data-aos="fade-left"
-              className="flex space-x-2 text-center justify-center items-center"
-            >
-              <a
-                href="https://www.facebook.com/nazmulsaw"
-                className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
-              >
-                <BsFacebook className="text-[28px]"></BsFacebook>
-              </a>
-              <a
-                href="https://github.com/ninazmul"
-                className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
-              >
-                <AiFillGithub className="text-[28px]"></AiFillGithub>
-              </a>
-              <a
-                href="#email"
-                className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
-              >
-                <TfiEmail className="text-[28px]"></TfiEmail>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/ninazmul"
-                className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
-              >
-                <AiFillLinkedin className="text-[28px] rounded-full"></AiFillLinkedin>
-              </a>
-              <a
-                href="https://www.fiverr.com/ninazmul"
-                className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
-              >
-                <TbBrandFiverr className="text-[28px] rounded-full"></TbBrandFiverr>
-              </a>
-              <a
-                href="https://www.upwork.com/freelancers/~01369d0d10ed1780e4"
-                className="text-fuchsia-600 hover:text-fuchsia-500 rounded-full glow p-2"
-              >
-                <SiUpwork className="text-[28px] rounded-full" />
-              </a>
-            </div>
           </div>
           <div className="" data-aos="fade-up">
             <img
