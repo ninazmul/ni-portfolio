@@ -42,7 +42,7 @@ const About = () => {
             </h1>
             <p
               data-aos="fade-left"
-              className="py-6 md:text-xl px-2 md:px-4 text-justify"
+              className="md:py-6 md:text-xl md:px-4 text-justify"
             >
               But you can call me{" "}
               <span className="text-fuchsia-500">N.I. Nazmul</span>. I'm not

@@ -88,7 +88,7 @@ const Header = () => {
           <div data-aos="fade-up" className="">
             <img
               src="https://i.ibb.co/cCST2NS/1694098148342-removebg-preview.png"
-              className="rounded-full border-2 p-1 border-fuchsia-500 img_glow "
+              className="rounded-full border-2 p-1 border-fuchsia-500 img_glow"
             />
           </div>
         </div>
