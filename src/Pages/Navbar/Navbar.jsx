@@ -30,7 +30,7 @@ const Navbar = () => {
   };
 
   const navBtn = (
-    <ul className="lg:flex gap-10 text-xl font-bold">
+    <ul className="lg:flex gap-10 text-xl font-bold uppercase">
       <NavLink
         spy="true"
         smooth="true"
@@ -46,7 +46,7 @@ const Navbar = () => {
         to="/about"
         className="hover:text-fuchsia-600 transition cursor-pointer"
       >
-        <li>About </li>
+        <li>About Me</li>
       </NavLink>
 
       <NavLink
