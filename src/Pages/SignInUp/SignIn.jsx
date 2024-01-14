@@ -110,7 +110,7 @@ const SignIn = () => {
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
           <h1 className="text-2xl md:text-5xl font-bold">
-            Welcome to <span className="text-fuchsia-500">N.I. Nazmul</span>'s
+            Welcome to <Link to="/" className="text-fuchsia-500">N.I. Nazmul</Link>'s
             Portfolio!
           </h1>
           <p className="py-6">

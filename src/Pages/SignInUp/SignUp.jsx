@@ -112,7 +112,7 @@ const SignUp = () => {
           </h1>
           <p className="py-6">
             Sign up to gain full access to{" "}
-            <span className="text-fuchsia-500">N.I. Nazmul</span>'s portfolio
+            <Link to="/" className="text-fuchsia-500">N.I. Nazmul</Link>'s portfolio
             and explore a collection of previous works. Join now to dive into a
             showcase of creativity!
           </p>
