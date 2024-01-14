@@ -108,7 +108,7 @@ const SignUp = () => {
         <div className="text-center lg:text-left">
           <h1 className="text-2xl md:text-5xl font-bold">
             Stay Connected with{" "}
-            <span className="text-fuchsia-500">N.I. Nazmul</span>'s Portfolio!
+            <Link to="/" className="text-fuchsia-500">N.I. Nazmul</Link>'s Portfolio!
           </h1>
           <p className="py-6">
             Sign up to gain full access to{" "}

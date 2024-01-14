@@ -115,7 +115,7 @@ const SignIn = () => {
           </h1>
           <p className="py-6">
             Explore and enjoy{" "}
-            <span className="text-fuchsia-500">N.I. Nazmul</span>'s creative
+            <Link to="/" className="text-fuchsia-500">N.I. Nazmul</Link>'s creative
             projects. Sign in to access the full portfolio experience.
           </p>
         </div>
