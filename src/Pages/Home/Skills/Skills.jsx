@@ -80,9 +80,9 @@ const Skills = () => {
             My <span className="text-fuchsia-500">Skill's</span>
           </h1>
           <img
-            className="layer absolute bottom-10 right-100 w-12 md:w-20 cover"
+            className="layer absolute bottom-10 right-100 rounded-lg w-12 md:w-20 cover"
             data-speed="-5"
-            src="https://i.ibb.co/vYBbJG5/figma-5968705.png"
+            src="https://i.ibb.co/vmSY4xT/with-mic-1st.png"
             alt=""
           />
           <img
@@ -111,9 +111,9 @@ const Skills = () => {
             alt=""
           />
           <img
-            className="layer absolute bottom-10 rounded-full right-0 w-12 md:w-20 cover"
+            className="layer absolute bottom-10 right-0 w-12 md:w-20 cover"
             data-speed="-15"
-            src="https://i.ibb.co/vmSY4xT/with-mic-1st.png"
+            src="https://i.ibb.co/vYBbJG5/figma-5968705.png"
             alt=""
           />
         </div>
