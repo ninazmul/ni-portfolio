@@ -119,7 +119,7 @@ const Skills = () => {
         </div>
         <Link to="/portfolio" className="flex justify-center">
           <button className="btn btn-outline m-4 border-t-0 border-x-0 border-b-4 neno-button shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg uppercase relative overflow-hidden text-center font-extrabold text-white">
-            My Portfolio
+            Project Gallery
           </button>
         </Link>
       </div>

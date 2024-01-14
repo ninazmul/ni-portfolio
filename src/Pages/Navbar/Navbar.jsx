@@ -30,12 +30,12 @@ const Navbar = () => {
   };
 
   const navBtn = (
-    <ul className="lg:flex gap-4 text-xl font-bold">
+    <ul className="lg:flex gap-10 text-xl font-bold">
       <NavLink
         spy="true"
         smooth="true"
         to="/"
-        className="hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover:border-fuchsia-600 cursor-pointer"
+        className="hover:text-fuchsia-600 transition cursor-pointer"
       >
         <li>Home </li>
       </NavLink>
@@ -44,7 +44,7 @@ const Navbar = () => {
         spy="true"
         smooth="true"
         to="/about"
-        className="hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover:border-fuchsia-600 cursor-pointer"
+        className="hover:text-fuchsia-600 transition cursor-pointer"
       >
         <li>About </li>
       </NavLink>
@@ -53,9 +53,9 @@ const Navbar = () => {
         spy="true"
         smooth="true"
         to="/portfolio"
-        className="hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover:border-fuchsia-600 cursor-pointer"
+        className="hover:text-fuchsia-600 transition cursor-pointer"
       >
-        <li>Portfolio </li>
+        <li>Project Gallery </li>
       </NavLink>
     </ul>
   );
