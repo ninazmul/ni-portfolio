@@ -19,7 +19,7 @@ const Footer = () => {
             />
           </Link>
           <p className="text-fuchsia-500">
-            Copyright © 2023 - All right reserved by
+            Copyright © 2024 - All right reserved by
             <span className="text-white"> N.I. Nazmul</span>
           </p>
         </aside>
