@@ -105,7 +105,7 @@ const About = () => {
           >
             <a
               data-aos="fade-right"
-              href="https://drive.google.com/file/d/1NzJUC53OkBVPZLQPKhZeUJIjTkQg85M2/view?usp=sharing"
+              href="https://drive.google.com/file/d/1aihDBamIngdPD7HTmNsYOysAdE4E3ay4/view?usp=sharing"
               className="btn btn-outline font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg uppercase relative overflow-hidden text-center my-1 text-xl w-72 text-white hover:text-none"
             >
               Download RESUME{" "}
@@ -115,7 +115,7 @@ const About = () => {
             </a>
             <a
               data-aos="fade-left"
-              href="https://drive.google.com/file/d/1U2xgiPDHVTLAG7yZ4_esS3Vc9GUQIaI9/view?usp=sharing"
+              href="https://drive.google.com/file/d/1OnaGGzJmm_-2nOhGoPZlBsCeDjiWfz28/view?usp=sharing"
               className="btn btn-outline font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg uppercase relative overflow-hidden text-center my-1 text-xl w-72 text-white hover:text-none"
             >
               Download CV{" "}
