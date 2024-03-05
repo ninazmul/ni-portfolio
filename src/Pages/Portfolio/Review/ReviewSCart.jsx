@@ -20,7 +20,7 @@ const ReviewSCart = ({ review }) => {
 
   return (
     <div>
-      <div className="card w-72 h-full glass">
+      <div className="card w-72 h-64 glass">
         <figure className="h-3/5">
           {image && <img src={image} alt="Review" />}
         </figure>
