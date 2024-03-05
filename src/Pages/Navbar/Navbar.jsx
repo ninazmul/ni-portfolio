@@ -5,6 +5,7 @@ import { AuthContext } from "../../providers/AuthProviders";
 import Swal from "sweetalert2";
 import { FaUserCircle } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import ActiveLink from "../../Components/ActiveLink";
 
 const Navbar = () => {
   const { user, signOUT } = useContext(AuthContext);
@@ -31,32 +32,29 @@ const Navbar = () => {
 
   const navBtn = (
     <ul className="lg:flex gap-10 text-xl font-bold uppercase">
-      <NavLink
+      <ActiveLink
         spy="true"
         smooth="true"
         to="/"
-        className="hover:text-fuchsia-600 transition cursor-pointer"
       >
         <li>Home </li>
-      </NavLink>
+      </ActiveLink>
 
-      <NavLink
+      <ActiveLink
         spy="true"
         smooth="true"
         to="/about"
-        className="hover:text-fuchsia-600 transition cursor-pointer"
       >
         <li>About Me</li>
-      </NavLink>
+      </ActiveLink>
 
-      <NavLink
+      <ActiveLink
         spy="true"
         smooth="true"
         to="/portfolio"
-        className="hover:text-fuchsia-600 transition cursor-pointer"
       >
         <li>Project Gallery </li>
-      </NavLink>
+      </ActiveLink>
     </ul>
   );
 
@@ -83,7 +81,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-fuchsia-500 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow glass bg-fuchsia-500 rounded-box w-52"
             >
               {navBtn}
             </ul>
