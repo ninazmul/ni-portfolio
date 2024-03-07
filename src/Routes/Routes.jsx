@@ -42,11 +42,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "/portfolio",
-        element: (
-          <PrivateRoutes>
-            <Portfolio></Portfolio>
-          </PrivateRoutes>
-        ),
+        element: <Portfolio></Portfolio>,
       },
       {
         path: "/reviews",
@@ -124,7 +120,11 @@ const routes = createBrowserRouter([
       },
       {
         path: "/dashboard/addReview",
-        element: <AddReview></AddReview>,
+        element: (
+          <PrivateRoutes>
+            <AddReview></AddReview>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/dashboard/updateReview/:id",
