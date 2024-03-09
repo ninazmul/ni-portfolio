@@ -139,16 +139,18 @@ const Root = () => {
         />
 
         {!init && (
-          <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-75">
-            <Audio
-              height="80"
-              width="80"
-              radius="9"
-              color="fuchsia"
-              ariaLabel="loading"
-              wrapperStyle
-              wrapperClass
-            />
+          <div className="absolute inset-0 bg-black bg-opacity-75">
+            <div className="absolute inset-0 top-52 flex justify-center">
+              <Audio
+                height="80"
+                width="80"
+                radius="9"
+                color="fuchsia"
+                ariaLabel="loading"
+                wrapperStyle
+                wrapperClass
+              />
+            </div>
           </div>
         )}
       </div>
