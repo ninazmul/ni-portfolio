@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const PasswordReset = () => {
   const [email, setEmail] = useState("");
 
-  const auth = getAuth(app); 
+  const auth = getAuth(app);
 
   const handlePasswordReset = async () => {
     try {
@@ -41,19 +41,19 @@ const PasswordReset = () => {
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
             <h1 className="text-2xl md:text-5xl font-bold">
-              Password <span className="text-fuchsia-500">Reset</span>!
+              Password <span className="text-orange-500">Reset</span>!
             </h1>
             <p className="py-6">
               Enter your email to receive a password reset link.
             </p>
           </div>
-          <div className="card w-4/5 md:w-96 flex-shrink-0 shadow-2xl border-2 p-1 border-fuchsia-500 card_glow text-white">
+          <div className="card w-4/5 md:w-96 flex-shrink-0 shadow-2xl border-2 p-1 border-orange-500 card_glow text-orange-200">
             <form className="card-body">
               <div>
                 <input
                   type="email"
                   placeholder="Your email"
-                  className="w-full rounded-lg py-2 bg-white px-8 flex-shrink-0 shadow-2xl border-2 border-fuchsia-500 card_glow text-fuchsia-800"
+                  className="w-full rounded-lg py-2 bg-wheat px-8 flex-shrink-0 shadow-2xl border-2 border-orange-500 card_glow text-orange-800"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -62,7 +62,7 @@ const PasswordReset = () => {
               <div className="form-control mt-6">
                 <input
                   onClick={handlePasswordReset}
-                  className="btn btn-outline neno-button font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg py-4 px-8 uppercase relative overflow-hidden text-center"
+                  className="btn btn-outline neno-button font-bold shadow-xl hover:shadow-orange-800/50 border-2 hover:bg-orange-500 border-orange-700 rounded-lg py-4 px-8 uppercase relative overflow-hidden text-center"
                   type="submit"
                   value="Send Reset Email"
                 />
@@ -70,7 +70,7 @@ const PasswordReset = () => {
 
               <p className="text-center">
                 Remember your password?{" "}
-                <Link to="/signIn" className="underline text-fuchsia-500">
+                <Link to="/signIn" className="underline text-orange-500">
                   Sign In
                 </Link>
               </p>

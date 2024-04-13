@@ -54,10 +54,10 @@ const Root = () => {
       },
       particles: {
         color: {
-          value: ["#FF00FF", "#9C27B0"],
+          value: ["#FFF5EE", "#F08000"],
         },
         links: {
-          color: "#FF00FF",
+          color: "#FF5F15",
           distance: 150,
           enable: true,
           opacity: 0.5,
@@ -111,6 +111,21 @@ const Root = () => {
           }}
         />
       )}
+      {!init && (
+        <div className="absolute inset-0 bg-white z-20">
+          <div className="absolute inset-0 top-52 flex justify-center">
+            <Audio
+              height="80"
+              width="80"
+              radius="9"
+              color="orange"
+              ariaLabel="loading"
+              wrapperStyle
+              wrapperClass
+            />
+          </div>
+        </div>
+      )}
       <div className="relative z-10">
         {noNavFooter || <Navbar />}
         <div className="min-h-screen pt-14 px-4">
@@ -137,22 +152,6 @@ const Root = () => {
             alignItems: "center",
           }}
         />
-
-        {!init && (
-          <div className="absolute inset-0 bg-black bg-opacity-75">
-            <div className="absolute inset-0 top-52 flex justify-center">
-              <Audio
-                height="80"
-                width="80"
-                radius="9"
-                color="fuchsia"
-                ariaLabel="loading"
-                wrapperStyle
-                wrapperClass
-              />
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );

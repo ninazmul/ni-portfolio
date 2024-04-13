@@ -16,19 +16,15 @@ const ItemCart = ({ item }) => {
               className="w-full h-full object-cover"
             />
           )}
-          {videoURL && (
-            <ReactPlayer controls url={videoURL} width="100%" />
-          )}
-          {audioURL && (
-            <ReactPlayer controls url={audioURL} width="100%" />
-          )}
+          {videoURL && <ReactPlayer controls url={videoURL} width="100%" />}
+          {audioURL && <ReactPlayer controls url={audioURL} width="100%" />}
         </figure>
         <div className="card-body">
           <h2 className="card-title">{projectName}</h2>
           <p>Created at {createdDate}</p>
           {liveLink && (
             <Link to={liveLink} className="card-actions justify-end">
-              <button className="neno-button btn btn-outline font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg uppercase relative overflow-hidden text-center">
+              <button className="neno-button btn btn-outline font-bold shadow-xl hover:shadow-orange-700/50 border-2 text-orange-200 hover:bg-orange-500 border-orange-700 rounded-lg uppercase relative overflow-hidden text-center">
                 Visit now!
               </button>
             </Link>

@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../Pages/Hooks/useAxiosSecure";
 
 const AllItems = () => {
-  const [items, refetch] = useItem(); 
+  const [items, refetch] = useItem();
   const axiosSecure = useAxiosSecure();
 
   const handleOnDelete = async (itemId) => {
@@ -46,7 +46,7 @@ const AllItems = () => {
   return (
     <div>
       <div className="">
-        <h1 className="text-center text-4xl pt-4 text-fuchsia-500 font-extrabold uppercase">
+        <h1 className="text-center text-4xl pt-4 text-orange-500 font-extrabold uppercase">
           Manage All item's: {items.length}
         </h1>
         <div className="overflow-x-auto">
@@ -56,9 +56,9 @@ const AllItems = () => {
               <tr>
                 <th></th>
                 <th></th>
-                <th>Name</th>
-                <th>Update</th>
-                <th>Remove</th>
+                <th className="text-orange-200">Name</th>
+                <th className="text-orange-200">Update</th>
+                <th className="text-orange-200">Remove</th>
               </tr>
             </thead>
             <tbody>
@@ -96,7 +96,7 @@ const AllItems = () => {
                   <td>
                     <Link
                       to={`/dashboard/update/${item._id}`}
-                      className="btn btn-outline btn-sm rounded-full"
+                      className="btn btn-outline btn-sm rounded-full text-orange-500"
                     >
                       Update
                     </Link>

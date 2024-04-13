@@ -1,52 +1,33 @@
-import { BsFacebook } from "react-icons/bs";
-import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-// import { TfiEmail } from "react-icons/tfi";
 import "../../../src/index.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { FaDownload } from "react-icons/fa";
 import Slider from "../Home/Slider";
-import { TbBrandFiverr } from "react-icons/tb";
-import { SiUpwork } from "react-icons/si";
+import acLogo from "/src/assets/Ac logo white text.webp";
 
-
+import img from "/src/assets/my/1694098009329.webp";
+import { Link } from "react-router-dom";
 const About = () => {
-    useEffect(() => {
-      Aos.init({
-        easing: "ease-out-quart",
-        delay: 0,
-        duration: 750,
-      });
-    }, []);
-
   return (
     <div>
       <div className="hero min-h-screen">
         <div className="hero-content flex-col-reverse lg:flex-row-reverse">
-          <div data-aos="fade-up" className="flex-1">
+          <div className="flex-1">
             <img
-              src="https://i.ibb.co/44Vc1cf/1694098009329.jpg"
-              className="border-2 p-1 border-fuchsia-500 img_glow "
+              src={img}
+              className="border-2 p-1 border-orange-500 img_glow "
             />
           </div>
           <div className="flex-1">
-            <p data-aos="fade-left" className=" text-xl text-center">
-              As-salamu alaykum
-            </p>
-            <h1
-              data-aos="fade-right"
-              className="text-3xl md:text-5xl font-bold leading-normal text-center uppercase"
-            >
-              I'm <span className="text-fuchsia-500">Nazmul Islam</span>
+            <p className=" text-xl text-center">As-salamu alaykum</p>
+            <h1 className="text-3xl md:text-5xl font-bold leading-normal text-center uppercase">
+              I'm <span className="text-orange-500">Nazmul Islam</span>
             </h1>
-            <p
-              data-aos="fade-left"
-              className="md:py-6 md:text-xl md:px-4 text-justify"
-            >
+            <p className="md:py-6 md:text-xl md:px-4 text-justify">
               But you can call me{" "}
-              <span className="text-fuchsia-500">N.I. Nazmul</span>. I'm not
-              your run-of-the-mill professional; I'm a creative chameleon with a
+              <span className="text-orange-500">N.I. Nazmul</span>. I'm not your
+              run-of-the-mill professional, I'm a creative chameleon with a
               diverse skill set. You see, I wear many hats - I'm a web-weaving
               wizard, a voice virtuoso, a graphics guru, and a master of visual
               storytelling through photo and video editing. My secret sauce?
@@ -80,16 +61,12 @@ const About = () => {
           <Slider></Slider>
         </div>
         <div className="lg:w-1/2">
-          <h1
-            data-aos="fade-left"
-            className="text-3xl md:text-5xl font-bold leading-normal text-center uppercase text-fuchsia-500"
-          >
-            Summary
-          </h1>
-          <p
-            data-aos="fade-left"
-            className="text-justify md:text-xl px-2 md:px-4"
-          >
+          <div className="flex justify-center py-2">
+            <h1 className="text-3xl md:text-5xl font-bold leading-normal text-center uppercase text-orange-200 border-b-4 px-4 border-orange-500 rounded-lg">
+              Summary
+            </h1>
+          </div>
+          <p className="text-justify md:text-xl px-2 md:px-4">
             I possess a wide array of creative skills, including proficiency in
             website development, voiceover and dubbing, graphic design, as well
             as photo and video editing. These talents allow me to approach
@@ -99,14 +76,10 @@ const About = () => {
             my skills and experience are finely honed for the job, ensuring
             high-quality outcomes every time.
           </p>
-          <div
-            data-aos="fade-up"
-            className="flex flex-col items-center justify-center py-4"
-          >
+          <div className="flex flex-col items-center justify-center py-4">
             <a
-              data-aos="fade-right"
               href="https://drive.google.com/file/d/1aihDBamIngdPD7HTmNsYOysAdE4E3ay4/view?usp=sharing"
-              className="btn btn-outline font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg uppercase relative overflow-hidden text-center my-1 text-xl w-72 text-white hover:text-none"
+              className="btn btn-outline font-bold shadow-xl hover:shadow-orange-800/50 border-2 hover:bg-orange-500 border-orange-700 rounded-lg uppercase relative overflow-hidden text-center my-1 text-xl w-72 text-orange-200 hover:text-none"
             >
               Download RESUME{" "}
               <span>
@@ -114,15 +87,51 @@ const About = () => {
               </span>
             </a>
             <a
-              data-aos="fade-left"
               href="https://drive.google.com/file/d/1d-tRE1wM4H1c2tmUWF8P09hyJRrz3Xl6/view?usp=sharing"
-              className="btn btn-outline font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg uppercase relative overflow-hidden text-center my-1 text-xl w-72 text-white hover:text-none"
+              className="btn btn-outline font-bold shadow-xl hover:shadow-orange-800/50 border-2 hover:bg-orange-500 border-orange-700 rounded-lg uppercase relative overflow-hidden text-center my-1 text-xl w-72 text-orange-200 hover:text-none"
             >
               Download CV{" "}
               <span>
                 <FaDownload />
               </span>
             </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div className="flex justify-center py-2">
+          <h1 className="text-3xl md:text-5xl font-bold leading-normal text-center uppercase px-4 text-orange-200 border-b-4 border-orange-500 rounded-lg">
+            My Agency
+          </h1>
+        </div>
+        <div>
+          <div className=" glass flex flex-col md:flex-row rounded-lg items-center p-4">
+            <img src={acLogo} alt="" className="w-40 lg:w-52 p-4" />
+            <div className="">
+              <h2 className="text-2xl font-bold font-serif">
+                ArtistyCode Studio
+              </h2>
+              <p className="text-xs">
+                ArtistyCode Studio is a versatile digital agency offering
+                expertise in website development using technologies such as MERN
+                Stack, Next.js, and Wordpress. Our services extend to graphic
+                design, including branding and logo design, as well as
+                advertisement services like spokesperson and product review
+                videos. With a focus on delivering comprehensive digital
+                solutions, we empower businesses to thrive online.
+              </p>
+              <div className="card-actions justify-end">
+                <Link
+                  to="https://artistycode-studio.web.app"
+                  target="_blank"
+                  className="card-actions justify-end"
+                >
+                  <button className="neno-button btn btn-outline font-bold shadow-xl hover:shadow-orange-700/50 border-2 text-orange-200 hover:bg-orange-500 border-orange-700 rounded-lg uppercase relative overflow-hidden text-center">
+                    Visit now!
+                  </button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>

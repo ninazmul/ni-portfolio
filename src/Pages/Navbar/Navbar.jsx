@@ -32,27 +32,15 @@ const Navbar = () => {
 
   const navBtn = (
     <ul className="lg:flex gap-10 text-xl font-bold uppercase">
-      <ActiveLink
-        spy="true"
-        smooth="true"
-        to="/"
-      >
+      <ActiveLink spy="true" smooth="true" to="/">
         <li>Home </li>
       </ActiveLink>
 
-      <ActiveLink
-        spy="true"
-        smooth="true"
-        to="/about"
-      >
+      <ActiveLink spy="true" smooth="true" to="/about">
         <li>About Me</li>
       </ActiveLink>
 
-      <ActiveLink
-        spy="true"
-        smooth="true"
-        to="/portfolio"
-      >
+      <ActiveLink spy="true" smooth="true" to="/portfolio">
         <li>Project Gallery </li>
       </ActiveLink>
     </ul>
@@ -81,7 +69,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow glass bg-fuchsia-500 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow glass bg-orange-500 rounded-box w-52"
             >
               {navBtn}
             </ul>
@@ -112,7 +100,7 @@ const Navbar = () => {
                     src={user.photoURL}
                   />
                 ) : (
-                  <div className="text-4xl text-fuchsia-500">
+                  <div className="text-4xl text-orange-500">
                     <FaUserCircle />
                   </div>
                 )}
@@ -120,19 +108,19 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-fuchsia-500 rounded-box min-w-full w-auto  gap-4"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-orange-500 rounded-box min-w-full w-auto  gap-4"
             >
               <li>
                 <NavLink to="/dashboard">
                   {user?.displayName && (
-                    <p className="justify-between hover:text-fuchsia-600 transition text-2xl cursor-pointer">
+                    <p className="justify-between hover:text-orange-600 transition text-2xl cursor-pointer">
                       {user.displayName}
                     </p>
                   )}
                 </NavLink>
 
                 {user?.email && (
-                  <p className="justify-between hover:text-fuchsia-600 transition cursor-pointer">
+                  <p className="justify-between hover:text-orange-600 transition cursor-pointer">
                     {user.email}
                   </p>
                 )}
@@ -142,18 +130,14 @@ const Navbar = () => {
                 <NavLink className="">
                   <button
                     onClick={handleSignOut}
-                    data-aos="fade-right"
-                    className="neno-button w-full font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-white rounded-lg p-2 uppercase relative overflow-hidden text-center"
+                    className="neno-button font-bold shadow-xl hover:shadow-orange-800/50 border-2 hover:bg-orange-500 border-orange-200 text-orange-50 w-52 rounded-lg p-2 uppercase relative overflow-hidden text-center"
                   >
                     SignOut
                   </button>
                 </NavLink>
               ) : (
                 <NavLink to="/signIn" className="">
-                  <button
-                    data-aos="fade-right"
-                    className="neno-button w-full font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-white rounded-lg p-2 uppercase relative overflow-hidden text-center"
-                  >
+                  <button className="neno-button font-bold shadow-xl hover:shadow-orange-800/50 border-2 hover:bg-orange-500 border-wheat rounded-lg p-2 uppercase relative overflow-hidden text-center w-40">
                     SignIn
                   </button>
                 </NavLink>
@@ -163,17 +147,17 @@ const Navbar = () => {
           <button className="flex items-center">
             <div className="chat chat-start hidden md:flex">
               <ReactWhatsapp
-                className="chat-bubble bg-gradient-to-r from-pink-500 to-purple-700 text-white text-xl font-bold w-48 flex items-center justify-between neno-button shadow-xl hover:shadow-fuchsia-800/50"
+                className="chat-bubble bg-gradient-to-r from-orange-500 to-orange-700 text-orange-200 text-xl font-bold w-48 flex items-center justify-between neno-button shadow-xl hover:shadow-orange-800/50"
                 number="+8801580845746"
                 message="As-salamu alaykum. I'm interested in learning more about your services."
               >
                 Contact Me
-                <IoLogoWhatsapp />
+                <IoLogoWhatsapp size={24} />
               </ReactWhatsapp>
             </div>
             <div className=" md:hidden">
               <ReactWhatsapp
-                className=" text-4xl text-fuchsia-500 shadow-xl hover:shadow-fuchsia-800/50"
+                className=" text-4xl text-orange-500 shadow-xl hover:shadow-orange-800/50"
                 number="+8801580845746"
                 message="As-salamu alaykum. I'm interested in learning more about your services."
               >

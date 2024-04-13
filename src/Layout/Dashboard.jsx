@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import { FaHome, FaSignOutAlt, FaSignInAlt } from "react-icons/fa";
 import { IoMdAdd } from "react-icons/io";
 import { MdManageAccounts } from "react-icons/md";
@@ -15,6 +15,7 @@ import AdminHome from "./AdminUser/AdminHome";
 import UserHome from "./AdminUser/UserHome";
 import { RiUserStarLine } from "react-icons/ri";
 import { GiStarsStack } from "react-icons/gi";
+import ActiveLink2 from "../Components/ActiveLink2";
 
 // Navbar component
 const Navbar = () => {
@@ -41,296 +42,296 @@ const Navbar = () => {
     }
   };
 
-   return (
-     <div>
-       <div className="dropdown dropdown-right md:hidden">
-         <div
-           tabIndex={0}
-           role="button"
-           className="btn btn-outline text-fuchsia-500 text-xl m-1"
-         >
-           <CiMenuBurger />
-         </div>
-         <ul
-           tabIndex={0}
-           className="dropdown-content z-[1] menu p-2 shadow bg-fuchsia-500 rounded-box w-52 text-lg"
-         >
-           {isAdmin ? (
-             <>
-               <li>
-                 <NavLink
-                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/dashboard/AdminHome"
-                 >
-                   <MdAdminPanelSettings />
-                   Admin Home
-                 </NavLink>
-               </li>
-               <li>
-                 <NavLink
-                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/dashboard/users"
-                 >
-                   <MdManageAccounts />
-                   Manage User's
-                 </NavLink>
-               </li>
-               <li>
-                 <NavLink
-                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/dashboard/add"
-                 >
-                   <IoMdAdd />
-                   Add Item's
-                 </NavLink>
-               </li>
-               <li>
-                 <NavLink
-                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/dashboard/allItems"
-                 >
-                   <SiNginxproxymanager />
-                   Manage Item's
-                 </NavLink>
-               </li>
+  return (
+    <div>
+      <div className="dropdown dropdown-right md:hidden">
+        <div
+          tabIndex={0}
+          role="button"
+          className="btn btn-outline text-orange-500 text-xl m-1"
+        >
+          <CiMenuBurger />
+        </div>
+        <ul
+          tabIndex={0}
+          className="dropdown-content z-[1] menu p-2 shadow bg-orange-500 rounded-box w-52 text-lg"
+        >
+          {isAdmin ? (
+            <>
+              <li>
+                <ActiveLink2
+                  className="p-2 hover:text-orange-800 hover:bg-wheat"
+                  to="/dashboard/AdminHome"
+                >
+                  <MdAdminPanelSettings />
+                  Admin Home
+                </ActiveLink2>
+              </li>
+              <li>
+                <ActiveLink2
+                  className="p-2 hover:text-orange-800 hover:bg-wheat"
+                  to="/dashboard/users"
+                >
+                  <MdManageAccounts />
+                  Manage User's
+                </ActiveLink2>
+              </li>
+              <li>
+                <ActiveLink2
+                  className="p-2 hover:text-orange-800 hover:bg-wheat"
+                  to="/dashboard/add"
+                >
+                  <IoMdAdd />
+                  Add Item's
+                </ActiveLink2>
+              </li>
+              <li>
+                <ActiveLink2
+                  className="p-2 hover:text-orange-800 hover:bg-wheat"
+                  to="/dashboard/allItems"
+                >
+                  <SiNginxproxymanager />
+                  Manage Item's
+                </ActiveLink2>
+              </li>
 
-               <li>
-                 <NavLink
-                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/dashboard/addReview"
-                 >
-                   <RiUserStarLine />
-                   Add Review's
-                 </NavLink>
-               </li>
-               <li>
-                 <NavLink
-                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/dashboard/allReviews"
-                 >
-                   <GiStarsStack />
-                   Manage Review's
-                 </NavLink>
-               </li>
-               <div>
-                 <p className="border-t border-gray-300 my-4"></p>
-               </div>
-               <li>
-                 <NavLink
-                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/"
-                 >
-                   <FaHome />
-                   Home
-                 </NavLink>
-               </li>
-               <li>
-                 {isSignedIn ? (
-                   <Link
-                     onClick={handleSignOut}
-                     className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   >
-                     <FaSignOutAlt />
-                     SignOut
-                   </Link>
-                 ) : (
-                   <Link
-                     to="/signIn"
-                     className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   >
-                     <FaSignInAlt />
-                     SignIn
-                   </Link>
-                 )}
-               </li>
-             </>
-           ) : (
-             <>
-               {" "}
-               <li>
-                 <NavLink
-                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/dashboard/userHome"
-                 >
-                   <FaUserCheck />
-                   User Home
-                 </NavLink>
-               </li>
-               <div>
-                 <p className="border-t border-gray-300 my-4"></p>
-               </div>
-               <li>
-                 <NavLink
-                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/"
-                 >
-                   <FaHome />
-                   Home
-                 </NavLink>
-               </li>
-               <li>
-                 {isSignedIn ? (
-                   <Link
-                     onClick={handleSignOut}
-                     className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   >
-                     <FaSignOutAlt />
-                     SignOut
-                   </Link>
-                 ) : (
-                   <Link
-                     to="/signIn"
-                     className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   >
-                     <FaSignInAlt />
-                     SignIn
-                   </Link>
-                 )}
-               </li>
-             </>
-           )}
-         </ul>
-       </div>
-       <div className="hidden md:flex w-1/6 md:w-1/5 min-h-full bg-fuchsia-500 fixed z-50 overflow-y-auto">
-         <ul className="menu text-xl font-bold">
-           {isAdmin ? (
-             <>
-               <li>
-                 <NavLink
-                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/dashboard/AdminHome"
-                 >
-                   <MdAdminPanelSettings />
-                   Admin Home
-                 </NavLink>
-               </li>
-               <li>
-                 <NavLink
-                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/dashboard/users"
-                 >
-                   <MdManageAccounts />
-                   Manage User's
-                 </NavLink>
-               </li>
-               <li>
-                 <NavLink
-                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/dashboard/add"
-                 >
-                   <IoMdAdd />
-                   Add Item's
-                 </NavLink>
-               </li>
-               <li>
-                 <NavLink
-                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/dashboard/allItems"
-                 >
-                   <SiNginxproxymanager />
-                   Manage Item's
-                 </NavLink>
-               </li>
+              <li>
+                <ActiveLink2
+                  className="p-2 hover:text-orange-800 hover:bg-wheat"
+                  to="/dashboard/addReview"
+                >
+                  <RiUserStarLine />
+                  Add Review's
+                </ActiveLink2>
+              </li>
+              <li>
+                <ActiveLink2
+                  className="p-2 hover:text-orange-800 hover:bg-wheat"
+                  to="/dashboard/allReviews"
+                >
+                  <GiStarsStack />
+                  Manage Review's
+                </ActiveLink2>
+              </li>
+              <div>
+                <p className="border-t border-gray-300 my-4"></p>
+              </div>
+              <li>
+                <ActiveLink2
+                  className="p-2 hover:text-orange-800 hover:bg-wheat"
+                  to="/"
+                >
+                  <FaHome />
+                  Home
+                </ActiveLink2>
+              </li>
+              <li>
+                {isSignedIn ? (
+                  <Link
+                    onClick={handleSignOut}
+                    className="p-2 hover:text-orange-800 hover:bg-wheat"
+                  >
+                    <FaSignOutAlt />
+                    SignOut
+                  </Link>
+                ) : (
+                  <Link
+                    to="/signIn"
+                    className="p-2 hover:text-orange-800 hover:bg-wheat"
+                  >
+                    <FaSignInAlt />
+                    SignIn
+                  </Link>
+                )}
+              </li>
+            </>
+          ) : (
+            <>
+              {" "}
+              <li>
+                <ActiveLink2
+                  className="p-2 hover:text-orange-800 hover:bg-wheat"
+                  to="/dashboard/userHome"
+                >
+                  <FaUserCheck />
+                  User Home
+                </ActiveLink2>
+              </li>
+              <div>
+                <p className="border-t border-gray-300 my-4"></p>
+              </div>
+              <li>
+                <ActiveLink2
+                  className="p-2 hover:text-orange-800 hover:bg-wheat"
+                  to="/"
+                >
+                  <FaHome />
+                  Home
+                </ActiveLink2>
+              </li>
+              <li>
+                {isSignedIn ? (
+                  <Link
+                    onClick={handleSignOut}
+                    className="p-2 hover:text-orange-800 hover:bg-wheat"
+                  >
+                    <FaSignOutAlt />
+                    SignOut
+                  </Link>
+                ) : (
+                  <Link
+                    to="/signIn"
+                    className="p-2 hover:text-orange-800 hover:bg-wheat"
+                  >
+                    <FaSignInAlt />
+                    SignIn
+                  </Link>
+                )}
+              </li>
+            </>
+          )}
+        </ul>
+      </div>
+      <div className="hidden md:flex w-1/6 md:w-1/5 min-h-full bg-orange-500 fixed z-50 overflow-y-auto">
+        <ul className="menu text-xl font-bold">
+          {isAdmin ? (
+            <>
+              <li>
+                <ActiveLink2
+                  className="p-2 hover:text-orange-800 hover:bg-wheat"
+                  to="/dashboard/AdminHome"
+                >
+                  <MdAdminPanelSettings />
+                  Admin Home
+                </ActiveLink2>
+              </li>
+              <li>
+                <ActiveLink2
+                  className="p-2 hover:text-orange-800 hover:bg-wheat"
+                  to="/dashboard/users"
+                >
+                  <MdManageAccounts />
+                  Manage User's
+                </ActiveLink2>
+              </li>
+              <li>
+                <ActiveLink2
+                  className="p-2 hover:text-orange-800 hover:bg-wheat"
+                  to="/dashboard/add"
+                >
+                  <IoMdAdd />
+                  Add Item's
+                </ActiveLink2>
+              </li>
+              <li>
+                <ActiveLink2
+                  className="p-2 hover:text-orange-800 hover:bg-wheat"
+                  to="/dashboard/allItems"
+                >
+                  <SiNginxproxymanager />
+                  Manage Item's
+                </ActiveLink2>
+              </li>
 
-               <li>
-                 <NavLink
-                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/dashboard/addReview"
-                 >
-                   <RiUserStarLine />
-                   Add Review's
-                 </NavLink>
-               </li>
-               <li>
-                 <NavLink
-                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/dashboard/allReviews"
-                 >
-                   <GiStarsStack />
-                   Manage Review's
-                 </NavLink>
-               </li>
-               <div>
-                 <p className="border-t border-gray-300 my-4"></p>
-               </div>
-               <li>
-                 <NavLink
-                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/"
-                 >
-                   <FaHome />
-                   Home
-                 </NavLink>
-               </li>
-               <li>
-                 {isSignedIn ? (
-                   <Link
-                     onClick={handleSignOut}
-                     className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   >
-                     <FaSignOutAlt />
-                     SignOut
-                   </Link>
-                 ) : (
-                   <Link
-                     to="/signIn"
-                     className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   >
-                     <FaSignInAlt />
-                     SignIn
-                   </Link>
-                 )}
-               </li>
-             </>
-           ) : (
-             <>
-               {" "}
-               <li>
-                 <NavLink
-                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/dashboard/userHome"
-                 >
-                   <FaUserCheck />
-                   User Home
-                 </NavLink>
-               </li>
-               <div>
-                 <p className="border-t border-gray-300 my-4"></p>
-               </div>
-               <li>
-                 <NavLink
-                   className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   to="/"
-                 >
-                   <FaHome />
-                   Home
-                 </NavLink>
-               </li>
-               <li>
-                 {isSignedIn ? (
-                   <Link
-                     onClick={handleSignOut}
-                     className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   >
-                     <FaSignOutAlt />
-                     SignOut
-                   </Link>
-                 ) : (
-                   <Link
-                     to="/signIn"
-                     className="p-2 hover:text-fuchsia-800 hover:bg-white"
-                   >
-                     <FaSignInAlt />
-                     SignIn
-                   </Link>
-                 )}
-               </li>
-             </>
-           )}
-         </ul>
-       </div>
-     </div>
-   );
+              <li>
+                <ActiveLink2
+                  className="p-2 hover:text-orange-800 hover:bg-wheat"
+                  to="/dashboard/addReview"
+                >
+                  <RiUserStarLine />
+                  Add Review's
+                </ActiveLink2>
+              </li>
+              <li>
+                <ActiveLink2
+                  className="p-2 hover:text-orange-800 hover:bg-wheat"
+                  to="/dashboard/allReviews"
+                >
+                  <GiStarsStack />
+                  Manage Review's
+                </ActiveLink2>
+              </li>
+              <div>
+                <p className="border-t border-gray-300 my-4"></p>
+              </div>
+              <li>
+                <ActiveLink2
+                  className="p-2 hover:text-orange-800 hover:bg-wheat"
+                  to="/"
+                >
+                  <FaHome />
+                  Home
+                </ActiveLink2>
+              </li>
+              <li>
+                {isSignedIn ? (
+                  <Link
+                    onClick={handleSignOut}
+                    className="p-2 hover:text-orange-800 hover:bg-wheat"
+                  >
+                    <FaSignOutAlt />
+                    SignOut
+                  </Link>
+                ) : (
+                  <Link
+                    to="/signIn"
+                    className="p-2 hover:text-orange-800 hover:bg-wheat"
+                  >
+                    <FaSignInAlt />
+                    SignIn
+                  </Link>
+                )}
+              </li>
+            </>
+          ) : (
+            <>
+              {" "}
+              <li>
+                <ActiveLink2
+                  className="p-2 hover:text-orange-800 hover:bg-wheat"
+                  to="/dashboard/userHome"
+                >
+                  <FaUserCheck />
+                  User Home
+                </ActiveLink2>
+              </li>
+              <div>
+                <p className="border-t border-gray-300 my-4"></p>
+              </div>
+              <li>
+                <ActiveLink2
+                  className="p-2 hover:text-orange-800 hover:bg-wheat"
+                  to="/"
+                >
+                  <FaHome />
+                  Home
+                </ActiveLink2>
+              </li>
+              <li>
+                {isSignedIn ? (
+                  <Link
+                    onClick={handleSignOut}
+                    className="p-2 hover:text-orange-800 hover:bg-wheat"
+                  >
+                    <FaSignOutAlt />
+                    SignOut
+                  </Link>
+                ) : (
+                  <Link
+                    to="/signIn"
+                    className="p-2 hover:text-orange-800 hover:bg-wheat"
+                  >
+                    <FaSignInAlt />
+                    SignIn
+                  </Link>
+                )}
+              </li>
+            </>
+          )}
+        </ul>
+      </div>
+    </div>
+  );
 };
 
 // ContentArea component
@@ -355,7 +356,6 @@ const ContentArea = () => {
     </div>
   );
 };
-
 
 // Dashboard component
 const Dashboard = () => {

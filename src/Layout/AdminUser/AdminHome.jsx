@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../Pages/Hooks/useAxiosSecure";
+import { Audio } from "react-loader-spinner";
 
 const AdminHome = () => {
   const axiosSecure = useAxiosSecure();
@@ -23,7 +24,19 @@ const AdminHome = () => {
   });
 
   if (isLoading) {
-    return <p>Loading...</p>; // You can show a loading indicator while data is being fetched
+    return (
+      <div className="flex justify-center">
+        <Audio
+          height="80"
+          width="80"
+          radius="9"
+          color="orange"
+          ariaLabel="loading"
+          wrapperStyle
+          wrapperClass
+        />
+      </div>
+    ); // You can show a loading indicator while data is being fetched
   }
 
   if (isError || !stats) {
@@ -32,23 +45,23 @@ const AdminHome = () => {
 
   return (
     <div>
-      <h1 className="text-center text-4xl pt-4 text-fuchsia-500 font-extrabold uppercase">
-        Welcome to <span className="text-white">Admin</span> Home
+      <h1 className="text-center text-4xl pt-4 text-orange-500 font-extrabold uppercase">
+        Welcome to <span className="text-orange-200">Admin</span> Home
       </h1>
       <div className="flex justify-center my-4">
         <div className="stats stats-vertical lg:stats-horizontal shadow glass rounded-none w-full h-full ">
-          <div className="stat text-white">
-            <div className="stat-title">Total Users</div>
+          <div className="stat text-orange-200">
+            <div className="stat-title text-orange-200">Total Users</div>
             <div className="stat-value">{stats.users}</div>
           </div>
 
-          <div className="stat text-fuchsia-500">
-            <div className="stat-title">Total Items</div>
+          <div className="stat text-orange-500">
+            <div className="stat-title text-orange-200">Total Items</div>
             <div className="stat-value">{stats.items}</div>
           </div>
 
-          <div className="stat text-white">
-            <div className="stat-title">Total Reviews</div>
+          <div className="stat text-orange-200">
+            <div className="stat-title text-orange-200">Total Reviews</div>
             <div className="stat-value">{stats.reviews}</div>
           </div>
         </div>

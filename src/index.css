@@ -2,33 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{
-    background-color: rgb(8, 0, 70);
-    color: white;
+:root {
+  /* Add !important to override Tailwind CSS */
+  color: wheat;
+  background-image: url("../src/assets/long-shot-couple-metaverse-date.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
-.glow{
-    transition: all 0.3s ease-in-out;
-}
-.glow:hover{
-    box-shadow: 0 0 25px rgb(206, 71, 193);
-}
-
-.img_glow{
-    box-shadow: 0 0 55px rgb(206, 71, 193);
-}
-
-.neno-button{
-    transition: all 0.3x ease-in-out;
-}
-.neno-button:hover{
-    box-shadow: 0 0 15px rgb(206, 71, 193);
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white overlay */
+  backdrop-filter: blur(10px); /* Increase blur amount for a stronger effect */
+  z-index: 1;
 }
 
-.card_glow{
-    box-shadow: 0 0 25px rgb(206, 71, 193);
+.glow {
+  transition: all 0.3s ease-in-out;
+}
+.glow:hover {
+  box-shadow: 0 0 25px rgb(255, 95, 21); /* Orange glow effect on hover */
 }
 
-.input_glow{
-    box-shadow: 0 0 15px rgb(206, 71, 193);
+.img_glow {
+  box-shadow: 0 0 55px rgb(255, 95, 21); /* Larger glow effect for the image */
+}
+
+.neno-button {
+  transition: all 0.3s ease-in-out;
+}
+.neno-button:hover {
+  box-shadow: 0 0 15px rgb(255, 95, 21); /* Light orange glow effect for buttons */
+}
+
+.card_glow {
+  box-shadow: 0 0 25px rgb(255, 95, 21); /* Orange glow for cards */
+}
+
+.input_glow {
+  box-shadow: 0 0 15px rgb(255, 95, 21); /* Light orange glow for input fields */
 }

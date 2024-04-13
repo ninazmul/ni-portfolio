@@ -23,12 +23,13 @@ const ReviewSCart = ({ review }) => {
       <div className="card w-72 h-64 glass">
         <figure className="h-3/5">
           {image && <img src={image} alt="Review" />}
+          {reviewText && <p>{reviewText}</p>}
         </figure>
+
         <div className="card-body">
           <div>
             <h2 className="card-title">Rating: {renderStars()}</h2>
           </div>
-          {reviewText && <p>{reviewText}</p>}
         </div>
       </div>
     </div>

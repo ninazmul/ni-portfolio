@@ -1,4 +1,3 @@
-
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
@@ -7,10 +6,10 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
       {pageNumbers.map((page) => (
         <button
           key={page}
-          className={`px-4 py-2 border border-fuchsia-500 rounded-full ${
+          className={`px-4 py-2 border border-orange-500 rounded-full ${
             currentPage === page
-              ? "bg-fuchsia-500 text-white"
-              : "text-fuchsia-500 hover:bg-green-100"
+              ? "bg-orange-500 text-orange-200"
+              : "text-orange-500 hover:bg-green-100"
           }`}
           onClick={() => onPageChange(page)}
         >

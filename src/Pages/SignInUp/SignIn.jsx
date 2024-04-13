@@ -45,7 +45,6 @@ const SignIn = () => {
     }
   };
 
-
   const handleGoogleSignIn = async () => {
     try {
       const result = await signInWithGoogle();
@@ -110,16 +109,22 @@ const SignIn = () => {
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
           <h1 className="text-2xl md:text-5xl font-bold">
-            Welcome to <Link to="/" className="text-fuchsia-500">N.I. Nazmul</Link>'s
-            Portfolio!
+            Welcome to{" "}
+            <Link to="/" className="text-orange-500">
+              N.I. Nazmul
+            </Link>
+            's Portfolio!
           </h1>
           <p className="py-6">
             Explore and enjoy{" "}
-            <Link to="/" className="text-fuchsia-500">N.I. Nazmul</Link>'s creative
-            projects. Sign in to access the full portfolio experience.
+            <Link to="/" className="text-orange-500">
+              N.I. Nazmul
+            </Link>
+            's creative projects. Sign in to access the full portfolio
+            experience.
           </p>
         </div>
-        <div className="card w-4/5 md:w-96 flex-shrink-0 shadow-2xl border-2 p-1 border-fuchsia-500 card_glow text-white">
+        <div className="card md:w-96 flex-shrink-0 shadow-2xl border-2 p-1 border-orange-500 card_glow text-orange-200">
           <form onSubmit={handleSignIn} className="card-body">
             {["email", "password"].map((field) => (
               <div key={field} className="form-control">
@@ -134,7 +139,7 @@ const SignIn = () => {
                     field.charAt(0).toUpperCase() + field.slice(1)
                   }`}
                   name={field}
-                  className="input input-bordered glass border-fuchsia-800 border-2 input_glow"
+                  className="input input-bordered glass border-orange-700 border-2 input_glow"
                   required
                 />
               </div>
@@ -158,14 +163,14 @@ const SignIn = () => {
                 type="text"
                 placeholder="Type Captcha"
                 name="captcha"
-                className="input input-bordered glass border-fuchsia-800 border-2 input_glow"
+                className="input input-bordered glass border-orange-700 border-2 input_glow"
                 required
               />
             </div>
             <div className="form-control mt-6">
               <input
                 disabled={disabled}
-                className="btn btn-outline neno-button font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg py-4 px-8 uppercase relative overflow-hidden text-center"
+                className="btn btn-outline neno-button font-bold shadow-xl hover:shadow-orange-800/50 border-2 hover:bg-orange-500 border-orange-700 rounded-lg py-4 px-8 uppercase relative overflow-hidden text-center"
                 type="submit"
                 value="SignIn"
               />
@@ -175,7 +180,7 @@ const SignIn = () => {
               <button
                 type="button"
                 onClick={handleGoogleSignIn}
-                className="neno-button-google font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg py-4 px-8 uppercase relative overflow-hidden text-center flex items-center justify-center gap-1 text-bold"
+                className="neno-button-google font-bold shadow-xl hover:shadow-orange-800/50 border-2 hover:bg-orange-500 border-orange-700 rounded-lg py-4 px-8 uppercase relative overflow-hidden text-center flex items-center justify-center gap-1 text-bold"
               >
                 <FcGoogle />
                 Google
@@ -183,7 +188,7 @@ const SignIn = () => {
             </div>
             <p className="text-center">
               Don't have an account?{" "}
-              <Link to="/signUp" className="underline text-fuchsia-500">
+              <Link to="/signUp" className="underline text-orange-500">
                 Sign Up
               </Link>
             </p>

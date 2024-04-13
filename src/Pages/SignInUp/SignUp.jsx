@@ -30,33 +30,33 @@ const SignUp = () => {
     }));
   };
 
-   const handleSubmit = async (e) => {
-     e.preventDefault();
-     try {
-       // Create user
-       await createUser(formData.email, formData.password);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      // Create user
+      await createUser(formData.email, formData.password);
 
-       // Update user profile
-       await updateUserProfile(formData.name, formData.photoUrl);
+      // Update user profile
+      await updateUserProfile(formData.name, formData.photoUrl);
 
-       // Save additional user information
-       const userInfo = {
-         displayName: formData.name,
-         email: formData.email,
-         photoUrl: formData.photoUrl,
-       };
-       axiosPublic.post("/users", userInfo).then((res) => {
-         if (res.data.insertedId) {
-           showSuccessAlert();
-           navigate(from, { replace: true });
-         }
-       });
-     } catch (error) {
-       console.error("Error creating user:", error.message);
-       setError(error.message);
-       showErrorAlert("Error", error.message);
-     }
-   };
+      // Save additional user information
+      const userInfo = {
+        displayName: formData.name,
+        email: formData.email,
+        photoUrl: formData.photoUrl,
+      };
+      axiosPublic.post("/users", userInfo).then((res) => {
+        if (res.data.insertedId) {
+          showSuccessAlert();
+          navigate(from, { replace: true });
+        }
+      });
+    } catch (error) {
+      console.error("Error creating user:", error.message);
+      setError(error.message);
+      showErrorAlert("Error", error.message);
+    }
+  };
 
   const handleGoogleSignIn = async () => {
     try {
@@ -108,16 +108,21 @@ const SignUp = () => {
         <div className="text-center lg:text-left">
           <h1 className="text-2xl md:text-5xl font-bold">
             Stay Connected with{" "}
-            <Link to="/" className="text-fuchsia-500">N.I. Nazmul</Link>'s Portfolio!
+            <Link to="/" className="text-orange-500">
+              N.I. Nazmul
+            </Link>
+            's Portfolio!
           </h1>
           <p className="py-6">
             Sign up to gain full access to{" "}
-            <Link to="/" className="text-fuchsia-500">N.I. Nazmul</Link>'s portfolio
-            and explore a collection of previous works. Join now to dive into a
-            showcase of creativity!
+            <Link to="/" className="text-orange-500">
+              N.I. Nazmul
+            </Link>
+            's portfolio and explore a collection of previous works. Join now to
+            dive into a showcase of creativity!
           </p>
         </div>
-        <div className="card w-4/5 md:w-96 flex-shrink-0 shadow-2xl border-2 p-1 border-fuchsia-500 card_glow text-white">
+        <div className="card md:w-96 flex-shrink-0 shadow-2xl border-2 p-1 border-orange-500 card_glow text-orange-200">
           <form className="card-body" onSubmit={handleSubmit}>
             {["name", "photoUrl", "email", "password"].map((field) => (
               <div key={field} className="form-control">
@@ -132,7 +137,7 @@ const SignUp = () => {
                     field.charAt(0).toUpperCase() + field.slice(1)
                   }`}
                   name={field}
-                  className="input input-bordered glass border-fuchsia-800 border-2 input_glow"
+                  className="input input-bordered glass border-orange-700 border-2 input_glow"
                   onChange={handleChange}
                   required
                 />
@@ -141,7 +146,7 @@ const SignUp = () => {
             {error && <div className="text-red-500 mt-2">{error}</div>}
             <div className="form-control mt-6">
               <input
-                className="neno-button font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg py-4 px-8 uppercase relative overflow-hidden text-center"
+                className="neno-button font-bold shadow-xl hover:shadow-orange-800/50 border-2 hover:bg-orange-500 border-orange-700 rounded-lg py-4 px-8 uppercase relative overflow-hidden text-center"
                 type="submit"
                 value="SignUp"
               />
@@ -151,14 +156,14 @@ const SignUp = () => {
               <button
                 type="button"
                 onClick={handleGoogleSignIn}
-                className="neno-button-google font-bold shadow-xl hover:shadow-fuchsia-800/50 border-2 hover:bg-fuchsia-500 border-fuchsia-800 rounded-lg py-4 px-8 uppercase relative overflow-hidden text-center flex items-center justify-center gap-1 text-bold"
+                className="neno-button-google font-bold shadow-xl hover:shadow-orange-800/50 border-2 hover:bg-orange-500 border-orange-700 rounded-lg py-4 px-8 uppercase relative overflow-hidden text-center flex items-center justify-center gap-1 text-bold"
               >
                 <FcGoogle /> Google
               </button>
             </div>
             <p className="text-center">
               Already a Subscriber?{" "}
-              <Link to="/signIn" className="underline text-fuchsia-500">
+              <Link to="/signIn" className="underline text-orange-500">
                 Sign In
               </Link>
             </p>

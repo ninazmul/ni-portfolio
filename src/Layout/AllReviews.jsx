@@ -46,7 +46,7 @@ const AllReviews = () => {
   return (
     <div>
       <div className="">
-        <h1 className="text-center text-4xl pt-4 text-fuchsia-500 font-extrabold uppercase">
+        <h1 className="text-center text-4xl pt-4 text-orange-500 font-extrabold uppercase">
           Manage All review's: {reviews.length}
         </h1>
         <div className="overflow-x-auto">
@@ -56,9 +56,9 @@ const AllReviews = () => {
               <tr>
                 <th></th>
                 <th></th>
-                <th>Rating</th>
-                <th>Update</th>
-                <th>Remove</th>
+                <th className="text-orange-200">Rating</th>
+                <th className="text-orange-200">Update</th>
+                <th className="text-orange-200">Remove</th>
               </tr>
             </thead>
             <tbody>
@@ -76,7 +76,7 @@ const AllReviews = () => {
                   <td>
                     <Link
                       to={`/dashboard/updateReview/${review._id}`}
-                      className="btn btn-outline btn-sm rounded-full"
+                      className="btn btn-outline btn-sm rounded-full text-orange-500"
                     >
                       Update
                     </Link>
@@ -95,6 +95,5 @@ const AllReviews = () => {
     </div>
   );
 };
-
 
 export default AllReviews;
